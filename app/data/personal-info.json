@@ -1,0 +1,41 @@
+{
+  "name": "Marcus",
+  "title": "Frontend & AI Enthusiast",
+  "description": "Passionate about creating beautiful user experiences and exploring the intersection of AI and web development.",
+  "email": "marcus@email.com",
+  "location": "Your City, Country",
+  "github": "https://github.com/yourusername",
+  "linkedin": "https://linkedin.com/in/yourusername",
+  "twitter": "https://twitter.com/yourusername",
+  "skills": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "AI/ML",
+    "Computer Vision",
+    "PostgreSQL",
+    "Prisma",
+    "Tailwind CSS"
+  ],
+  "experience": [
+    {
+      "title": "Frontend Developer",
+      "company": "Tech Company",
+      "period": "2023 - Present",
+      "description": "Building modern web applications with React and Next.js"
+    },
+    {
+      "title": "AI Research Intern",
+      "company": "AI Lab",
+      "period": "2022 - 2023",
+      "description": "Researching computer vision applications and machine learning models"
+    }
+  ],
+  "education": {
+    "degree": "Computer Science",
+    "school": "University Name",
+    "year": "2023"
+  }
+}
