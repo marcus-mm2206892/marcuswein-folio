@@ -1,43 +1,14 @@
 import Image from "next/image";
 import { SITE_CONFIG, SOCIAL_LINKS, CONTACT_DETAILS } from "./config/constants";
 import NavBar from "./components/molecules/NavBar";
+import LandingPage from "./components/molecules/LandingPage";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-off-white text-gray-3">
-      <div className="pt-16"></div>
       <NavBar />
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-3">
-            Hey! I'm Marcus 👋
-          </h1>
-          <p className="text-xl md:text-2xl font-body text-gray-1 max-w-2xl mx-auto">
-            Software Developer & AI Researcher based in {SITE_CONFIG.location}.
-            Building meaningful software solutions that merge design, AI, and
-            research.
-          </p>
-          <div className="flex justify-center space-x-4 pt-4">
-            <a
-              href={SOCIAL_LINKS.github.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              View GitHub
-            </a>
-            <a
-              href={SOCIAL_LINKS.linkedin.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              Connect on LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
+      <LandingPage />
 
       {/* Projects Section */}
       <section className="py-16 px-6 bg-warm-gray-1">

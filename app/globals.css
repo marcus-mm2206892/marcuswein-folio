@@ -45,6 +45,7 @@
 
   --font-body: var(--font-family-body);
   --font-heading: var(--font-family-heading);
+  --font-mono: var(--font-family-mono);
 
   /* TO BE USED LATER */
   --bg-off-white: var(--color-off-white);
