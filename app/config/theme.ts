@@ -1,41 +1,46 @@
 export const colors = {
-  primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
+  light: {
+    background: '#FAFAF9',
+    foreground: '#262626',
+    primary: '#262626',
+    secondary: '#F2F2F2',
   },
-  gray: {
-    50: '#f9fafb',
-    100: '#f3f4f6',
-    200: '#e5e7eb',
-    300: '#d1d5db',
-    400: '#9ca3af',
-    500: '#6b7280',
-    600: '#4b5563',
-    700: '#374151',
-    800: '#1f2937',
-    900: '#111827',
+  dark: {
+    background: '#0E0E0C',
+    foreground: '#FFFFFF',
+    primary: '#FFFFFF',
+    secondary: '#262626',
   },
   accent: {
-    blue: '#3b82f6',
-    green: '#10b981',
-    purple: '#8b5cf6',
-    orange: '#f59e0b',
-    red: '#ef4444',
+    green: '#8C8C73',
+    greenLight: '#AEAE9D',
+    warmGray: '#D1D1C7',
+    warmGrayLight: '#DDDDD5',
+    warmGrayLighter: '#E8E8E3',
+  },
+  // New comprehensive color palette
+  palette: {
+    white: '#FFFFFF',
+    lightGray1: '#F2F2F2',
+    lightGray2: '#E6E6E6',
+    lightGray3: '#D9D9D9',
+    gray1: '#666666',
+    gray2: '#4D4D4D',
+    gray3: '#262626',
+    black: '#0E0E0C',
+    offWhite: '#FAFAF9',
+    warmGray1: '#E8E8E3',
+    warmGray2: '#DDDDD5',
+    warmGray3: '#D1D1C7',
+    greenGray1: '#AEAE9D',
+    greenGray2: '#8C8C73',
   }
 }
 
 export const fonts = {
-  heading: 'Inter, system-ui, sans-serif',
-  body: 'Inter, system-ui, sans-serif',
-  mono: 'JetBrains Mono, monospace',
+  heading: 'General Sans, system-ui, sans-serif',
+  body: 'Cabinet Grotesk, system-ui, sans-serif',
+  mono: 'Noto Sans Mono, monospace',
 }
 
 export const spacing = {

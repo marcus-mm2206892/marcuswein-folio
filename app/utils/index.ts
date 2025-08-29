@@ -41,7 +41,7 @@ export const scrollToElement = (elementId: string): void => {
 
 // Get social link by platform
 export const getSocialLink = (platform: keyof typeof SOCIAL_LINKS): string => {
-  return SOCIAL_LINKS[platform]
+  return SOCIAL_LINKS[platform].link
 }
 
 // Generate meta tags
@@ -49,17 +49,30 @@ export const generateMetaTags = (title?: string, description?: string) => {
   return {
     title: title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name,
     description: description || SITE_CONFIG.description,
+    keywords: SITE_CONFIG.keywords,
+    author: SITE_CONFIG.author,
     openGraph: {
       title: title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name,
       description: description || SITE_CONFIG.description,
       url: SITE_CONFIG.url,
       siteName: SITE_CONFIG.name,
       type: 'website',
+      locale: 'en_US',
+      images: [
+        {
+          url: SITE_CONFIG.ogImage,
+          width: 1200,
+          height: 630,
+          alt: SITE_CONFIG.name,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name,
       description: description || SITE_CONFIG.description,
+      images: [SITE_CONFIG.ogImage],
+      creator: SITE_CONFIG.twitterHandle,
     },
   }
 }

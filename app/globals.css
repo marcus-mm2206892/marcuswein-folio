@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "./fonts.css";
+
+@theme {
+  --color-white: #ffffff;
+  --color-light-gray-1: #f2f2f2;
+  --color-light-gray-2: #e6e6e6;
+  --color-light-gray-3: #d9d9d9;
+  --color-gray-1: #666666;
+  --color-gray-2: #4d4d4d;
+  --color-gray-3: #262626;
+  --color-black: #0e0e0c;
+  --color-off-white: #fcfcf0;
+  --color-warm-gray-1: #e8e8e3;
+  --color-warm-gray-2: #ddddd5;
+  --color-warm-gray-3: #d1d1c7;
+  --color-green-gray-1: #aeae9d;
+  --color-green-gray-2: #8c8c73;
+
+  --color-primary-50: #fcfcf0;
+  --color-primary-100: #f2f2f2;
+  --color-primary-200: #e6e6e6;
+  --color-primary-300: #d9d9d9;
+  --color-primary-400: #666666;
+  --color-primary-500: #4d4d4d;
+  --color-primary-600: #262626;
+  --color-primary-700: #0e0e0c;
+  --color-primary-800: #0e0e0c;
+  --color-primary-900: #0e0e0c;
+
+  --color-accent-green: #8c8c73;
+  --color-accent-green-light: #aeae9d;
+  --color-accent-warm-gray: #d1d1c7;
+  --color-accent-warm-gray-light: #ddddd5;
+  --color-accent-warm-gray-lighter: #e8e8e3;
+
+  --font-family-heading: "General Sans", system-ui, sans-serif;
+  --font-family-body: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-family-mono: "Noto Sans Mono", monospace;
+
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  --font-body: var(--font-family-body);
+  --font-heading: var(--font-family-heading);
+
+  /* TO BE USED LATER */
+  --bg-off-white: var(--color-off-white);
+  --bg-gray-2: var(--color-gray-2);
+  --bg-gray-3: var(--color-gray-3);
+  --bg-warm-gray-1: var(--color-warm-gray-1);
+  --bg-warm-gray-2: var(--color-warm-gray-2);
+
+  --text-black: var(--color-black);
+  --text-gray-3: var(--color-gray-3);
+  --text-accent-green: var(--color-accent-green);
+  --text-accent-green-light: var(--color-accent-green-light);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply bg-gray-3 text-white px-4 py-2 rounded-lg inline-block no-underline transition-colors;
+  }
+
+  .btn-primary:hover {
+    @apply bg-gray-2;
+  }
+
+  .btn-secondary {
+    @apply bg-warm-gray-1 text-gray-3 px-4 py-2 rounded-lg inline-block no-underline transition-colors;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-warm-gray-2;
+  }
+
+  .link {
+    @apply text-accent-green no-underline transition-colors;
+  }
+
+  .link:hover {
+    @apply text-accent-green-light;
+  }
 }
