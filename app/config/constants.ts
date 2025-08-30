@@ -88,11 +88,14 @@ export const LANDING_PAGE = {
     pt2: "Research",
   },
   landingDescription:
-    "A builder at heart. From coding software and AI systems to crafting Gundams on my desk, I am a student who thrives on turning pieces into something greater than the sum of its parts.",
-  landingCoordinates: "25.3262° S, 51.5295° E",
+    "A builder at heart. From coding software and AI systems to crafting Gundams, I thrive on turning pieces into something greater than the sum of its parts.",
+  landingCoordinates: {
+    x: "25.3262° S",
+    y: "51.5295° E",
+  },
   landingLocation: "Doha, Qatar",
-  subInfoTitle: "Graduating",
-  subInfoDescription: `June '26`,
+  subInfoTitle: "Available for work",
+  subInfoDescription: `SEPT '26`,
   popupTexts: {
     aiResearcher: {
       label: "AI Researcher",

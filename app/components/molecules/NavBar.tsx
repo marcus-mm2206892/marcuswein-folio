@@ -10,12 +10,12 @@ export default function NavBar() {
       id="nav-bar"
       role="banner"
       aria-label="Main navigation"
-      className="top-0 left-0 right-0 z-50"
+      className="absolute top-0 left-0 right-0 z-50"
     >
-      <div className="max-w-7xl mx-auto pt-8 px-8">
+      <div className="mx-auto pt-8 px-8">
         <div className="flex justify-between items-center min-h-16">
           {/* Logo/Brand */}
-          <div className="flex-shrink-0 flex flex-col md:flex-row items-start justify-start md:items-center md:justify-start gap-4">
+          <div className="flex-shrink-0 flex flex-col md:flex-row items-start justify-start md:items-center md:justify-start gap-4 md:gap-12">
             <div>
               <Link href={NAVIGATION.home.href} aria-label="Go to homepage">
                 <img
@@ -27,7 +27,7 @@ export default function NavBar() {
               </Link>
             </div>
             <div>
-              <span className="text-sm md:text-md font-mono text-gray-3 hover:text-accent-green transition-colors whitespace-normal">
+              <span className="text-sm md:text-md font-mono text-gray-3 whitespace-normal">
                 ( {LANDING_PAGE.headerTitle.pt1}
                 <br className="md:hidden" /> & {LANDING_PAGE.headerTitle.pt2} )
               </span>

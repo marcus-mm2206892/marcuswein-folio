@@ -4,6 +4,13 @@ import { fonts } from "./config/theme";
 import { SITE_CONFIG } from "./config/constants";
 import NavBar from "./components/molecules/NavBar";
 import GrainOverlay from "./components/molecules/GrainOverlay";
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -21,14 +28,14 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: SITE_CONFIG.url,
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
@@ -43,7 +50,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
     images: [SITE_CONFIG.ogImage],
@@ -64,19 +71,19 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/assets/images/personal/mwlogo.png" />
+        <link
+          rel="apple-touch-icon"
+          href="/assets/images/personal/mwlogo.png"
+        />
         <meta name="theme-color" content="#262626" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body 
-        className="font-body"
-        style={{ fontFamily: fonts.body }}
+      <body
+        className={`font-body ${spaceGrotesk.className}`}
         suppressHydrationWarning={true}
       >
         <GrainOverlay />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
