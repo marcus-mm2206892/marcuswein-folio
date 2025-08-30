@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SITE_CONFIG, SOCIAL_LINKS, CONTACT_DETAILS } from "./config/constants";
 import NavBar from "./components/molecules/NavBar";
 import LandingPage from "./components/molecules/LandingPage";
+import MainPage from "./components/molecules/MainPage";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <NavBar />
       {/* Hero Section */}
       <LandingPage />
-
+      <MainPage />
       {/* Projects Section */}
       <section className="py-16 px-6 bg-warm-gray-1">
         <div className="max-w-4xl mx-auto">

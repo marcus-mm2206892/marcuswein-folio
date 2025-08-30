@@ -88,7 +88,7 @@ export const LANDING_PAGE = {
     pt2: "Research",
   },
   landingDescription:
-    "A builder at heart. From coding software and AI systems to crafting Gundams, I thrive on turning pieces into something greater than the sum of its parts.",
+    "A builder at heart. From coding software and AI systems to assembling Gundams, I thrive on turning pieces into something greater than the sum of its parts.",
   landingCoordinates: {
     x: "25.3262° S",
     y: "51.5295° E",
@@ -97,25 +97,25 @@ export const LANDING_PAGE = {
   subInfoTitle: "Available for work",
   subInfoDescription: `SEPT '26`,
   popupTexts: {
+    frontendDev: {
+      label: "Frontend Dev.",
+      icon: Code2,
+    },
     aiResearcher: {
       label: "AI Researcher",
       icon: Brain,
-    },
-    frontendDev: {
-      label: "Frontend Developer",
-      icon: Code2,
     },
     webDesigner: {
       label: "Web Designer",
       icon: Layout,
     },
-    graphicDesigner: {
-      label: "Graphic Designer",
-      icon: Palette,
-    },
     gamer: {
       label: "Gamer",
       icon: Gamepad2,
+    },
+    graphicArtist: {
+      label: "Graphic Artist",
+      icon: Palette,
     },
     gundamBuilder: {
       label: "Gundam Builder",
