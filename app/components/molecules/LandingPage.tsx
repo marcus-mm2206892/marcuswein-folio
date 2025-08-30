@@ -47,7 +47,7 @@ export default function LandingPage() {
 
   return (
     <section
-      className={`sticky top-0 flex flex-col items-center justify-center h-screen p-8 ${
+      className={`sticky top-0 flex flex-col items-center justify-center h-screen p-8 z-0 ${
         !isClickable ? "pointer-events-none" : ""
       }`}
       style={{
@@ -57,12 +57,12 @@ export default function LandingPage() {
     >
       <div className="flex-1 flex flex-col items-center justify-end md:justify-center w-full mb-12 md:mb-0">
         <img
-          src="/assets/images/personal/marcuswein.svg"
+          src="/assets/images/personal/marcuswein2.svg"
           alt="MARCUSW"
           className="mt-auto mb-8 w-full h-auto hidden md:block"
         />
         <img
-          src="/assets/images/personal/marcusw.svg"
+          src="/assets/images/personal/marcusw2.svg"
           alt="MARCUSW"
           className="block md:hidden md:mt-20 h-auto pb-8 self-start"
           style={{
@@ -89,7 +89,7 @@ export default function LandingPage() {
             </div>
 
             <div className="flex flex-col gap-4 md:gap-10">
-              <p className="w-full text-balance text-sm font-regular leading-snug text-gray-1 md:text-base xl:text-lg">
+              <p className="max-w-full md:w-4/5 text-balance text-sm font-regular leading-snug text-gray-1 md:text-base xl:text-lg">
                 {LANDING_PAGE.landingDescription}
               </p>
 
@@ -109,7 +109,7 @@ export default function LandingPage() {
             <img
               src="/assets/images/svg/vectorhomescreen.svg"
               alt="Vector Home Screen"
-              className="w-3/4 max-w-64 h-auto hidden md:block"
+              className="w-3/5 max-w-64 h-auto hidden md:block"
             />
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function LandingPage() {
       {/* Canvas positioned absolutely above all content */}
       <div className="absolute inset-0 pointer-events-none z-1">
         <div className="relative w-full h-full">
-          <div className="absolute top-1/3 md:top-1/2 mt-12 md:mt-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-90 md:w-xl h-80 md:h-96 block">
+          <div className="absolute top-1/3 md:top-1/2 mt-12 md:mt-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-86 md:w-xl h-80 md:h-96 block">
             <Canvas />
           </div>
         </div>

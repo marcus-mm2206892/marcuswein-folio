@@ -24,7 +24,7 @@ export default function TagsAnimation() {
           key={currentTagIndex}
           className="absolute bottom-0"
           style={{
-            left: `${currentTagIndex % 2 === 0 ? (currentTagIndex * 5) % 20 : 60 + ((currentTagIndex * 3) % 10)}%`,
+            left: `${currentTagIndex % 2 === 0 ? 0 : 70}%`,
           }}
           initial={{
             y: 0,

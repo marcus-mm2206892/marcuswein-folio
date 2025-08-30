@@ -71,7 +71,7 @@ export default function Canvas() {
 
     // Camera
     const camera = new THREE.PerspectiveCamera(
-      40, // FOV
+      39, // FOV
       initialSize.width / initialSize.height,
       0.1,
       100

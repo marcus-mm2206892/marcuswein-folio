@@ -55,6 +55,9 @@
   --bg-warm-gray-2: var(--color-warm-gray-2);
   --bg-accent-green: var(--color-accent-green);
   --bg-accent-green-light: var(--color-accent-green-light);
+  --bg-accent-warm-gray: var(--color-accent-warm-gray);
+  --bg-accent-warm-gray-light: var(--color-accent-warm-gray-light);
+  --bg-accent-warm-gray-lighter: var(--color-accent-warm-gray-lighter);
 
   --text-black: var(--color-black);
   --text-gray-3: var(--color-gray-3);
@@ -69,6 +72,7 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--color-off-white);
+    overflow-x: none;
   }
 
   h1,
