@@ -46,18 +46,11 @@ export default function Home() {
       <Footer />
 
       {/* Burger Menu - Show after 50vh or when sidebar is open */}
-      <AnimatePresence>
-        {(showBurger || isSidebarOpen) && (
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <Burger isOpen={isSidebarOpen} onToggle={toggleSidebar} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Burger
+        isOpen={isSidebarOpen}
+        onToggle={toggleSidebar}
+        isVisible={showBurger || isSidebarOpen}
+      />
 
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
