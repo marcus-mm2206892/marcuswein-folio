@@ -29,6 +29,7 @@
   --color-primary-800: #0e0e0c;
   --color-primary-900: #0e0e0c;
 
+  --color-accent-dark-green: #746c64;
   --color-accent-green: #8c8c73;
   --color-accent-green-light: #aeae9d;
   --color-accent-warm-gray: #d1d1c7;
@@ -53,6 +54,7 @@
   --bg-gray-3: var(--color-gray-3);
   --bg-warm-gray-1: var(--color-warm-gray-1);
   --bg-warm-gray-2: var(--color-warm-gray-2);
+  --bg-accent-dark-green: var(--color-accent-dark-green);
   --bg-accent-green: var(--color-accent-green);
   --bg-accent-green-light: var(--color-accent-green-light);
   --bg-accent-warm-gray: var(--color-accent-warm-gray);

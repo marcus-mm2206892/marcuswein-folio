@@ -50,11 +50,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         initial={{ x: "calc(100% + 100px)" }}
         animate={{ x: isOpen ? 0 : "calc(100% + 100px)" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="h-[98vh] bg-gray-3 fixed right-0 top-[1%] text-off-white z-50 rounded-l-[20px] max-w-[98%] overflow-hidden"
+        className="h-[98vh] bg-gray-3 fixed right-0 top-[1%] text-off-white z-50 rounded-2xl max-w-[98%] overflow-hidden"
       >
         <div className="box-border h-full pr-[28vh] pl-[5vh] pt-[10vh] pb-[5vh] flex flex-col justify-between">
           {/* Navigation */}
-          <nav className="flex flex-col text-[4.9vh] mt-[20%] z-4">
+          <nav className="flex flex-col text-[5vh] mt-[20%] z-4">
             <div className="header"></div>
             {Object.values(NAVIGATION).map((item) => (
               <motion.a
@@ -72,7 +72,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   animate={{ scale: activeLink === item.id ? 1 : 0 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 />
-                {item.label}
+                {item.label.toUpperCase()}
               </motion.a>
             ))}
           </nav>
@@ -98,7 +98,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="button button--stroke"
               >
                 <span className="button__flair"></span>
-                <span className="button__label">LINKEDIN</span>
+                <span className="button__label">
+                  {SOCIAL_LINKS.linkedin.label.toUpperCase()}
+                </span>
               </a>
 
               <a
@@ -108,7 +110,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="button button--stroke"
               >
                 <span className="button__flair"></span>
-                <span className="button__label">GITHUB</span>
+                <span className="button__label">
+                  {SOCIAL_LINKS.github.label.toUpperCase()}
+                </span>
               </a>
 
               <a
@@ -118,7 +122,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="button button--stroke"
               >
                 <span className="button__flair"></span>
-                <span className="button__label">INSTAGRAM</span>
+                <span className="button__label">
+                  {SOCIAL_LINKS.instagram.label.toUpperCase()}
+                </span>
               </a>
             </div>
           </div>
