@@ -13,7 +13,7 @@ export default function Burger({ isOpen, onToggle, isVisible }: BurgerProps) {
   return (
     <motion.button
       onClick={onToggle}
-      className="fixed top-[2vh] right-[2%] m-[2vh] z-[60] w-[7vh] h-[7vh] rounded-full bg-accent-green cursor-pointer flex items-center justify-center hover:bg-accent-green-light transition-colors"
+      className="fixed top-6 right-6 z-[60] w-14 h-14 rounded-full bg-accent-green cursor-pointer flex items-center justify-center"
       aria-label="Toggle menu"
       initial={{ scale: 0, opacity: 0 }}
       animate={{

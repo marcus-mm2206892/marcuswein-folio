@@ -65,7 +65,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-off-white text-gray-3 p-10 px-[5%] relative">
+    <footer className="text-gray-3 p-10 px-[5%] relative">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-5 mb-5">
         {/* Menu and Socials - Side by side on mobile, separate on medium+ */}
         <div className="grid grid-cols-6 md:contents gap-5">

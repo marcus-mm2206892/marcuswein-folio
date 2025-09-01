@@ -59,21 +59,25 @@ export const SOCIAL_LINKS = {
     label: "Github",
     link: "https://github.com/marcus-mm2206892",
     icon: "/assets/images/icons/github-icon.png",
+    key: "github",
   },
   linkedin: {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/marcuswein",
     icon: "/assets/images/icons/linkedin-icon.png",
+    key: "linkedin",
   },
   instagram: {
     label: "Instagram",
     link: "https://www.instagram.com/verayzown/",
     icon: "/assets/images/icons/instagram-icon.png",
+    key: "instagram",
   },
   youtube: {
     label: "YouTube",
     link: "https://www.youtube.com/@verayzon",
     icon: "/assets/images/icons/youtube-icon.png",
+    key: "youtube",
   },
 };
 

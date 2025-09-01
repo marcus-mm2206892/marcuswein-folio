@@ -31,7 +31,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Menu Overlay */}
+      {/* Black Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -50,7 +50,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         initial={{ x: "calc(100% + 100px)" }}
         animate={{ x: isOpen ? 0 : "calc(100% + 100px)" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="h-[98vh] bg-gray-3 fixed right-0 top-[1%] text-off-white z-50 rounded-2xl max-w-[98%] overflow-hidden"
+        className="h-[98vh] bg-accent-dark-green fixed right-0 top-[1%] text-off-white z-50 rounded-tl-2xl rounded-bl-2xl max-w-[98%] overflow-hidden"
       >
         <div className="box-border h-full pr-[28vh] pl-[5vh] pt-[10vh] pb-[5vh] flex flex-col justify-between">
           {/* Navigation */}
@@ -63,14 +63,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="text-off-white font-bold relative flex items-center no-underline"
                 onMouseEnter={() => handleLinkHover(item.id)}
                 onMouseLeave={handleLinkLeave}
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 12 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <motion.div
-                  className="w-[10px] h-[10px] bg-off-white rounded-full absolute left-[-30px]"
+                  className="w-2 h-2 bg-off-white rounded-full absolute left-[-1.5rem]"
                   initial={{ scale: 0 }}
                   animate={{ scale: activeLink === item.id ? 1 : 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
                 {item.label.toUpperCase()}
               </motion.a>
@@ -78,68 +78,46 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </nav>
 
           {/* Footer */}
-          <div className="min-w-[300px] flex flex-col items-start">
-            <p className="text-accent-green text-[0.9em] font-bold">
+          <div className="min-w-sm flex flex-col items-start">
+            <p className="text-accent-green-light text-base font-bold">
               EMAIL ADDRESS
             </p>
             <div className="animated-link">
               <a
                 href={`mailto:${CONTACT_DETAILS.email}`}
-                className="text-off-white text-[1.15em] font-bold h-[1.2em] leading-[1.2em] hover:text-accent-green transition-colors"
+                className="text-off-white text-lg font-bold"
               >
                 {CONTACT_DETAILS.email}
               </a>
             </div>
-            <div className="flex gap-[10px] mt-[20px]">
-              <a
-                href={SOCIAL_LINKS.linkedin.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button--stroke"
-              >
-                <span className="button__flair"></span>
-                <span className="button__label">
-                  {SOCIAL_LINKS.linkedin.label.toUpperCase()}
-                </span>
-              </a>
-
-              <a
-                href={SOCIAL_LINKS.github.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button--stroke"
-              >
-                <span className="button__flair"></span>
-                <span className="button__label">
-                  {SOCIAL_LINKS.github.label.toUpperCase()}
-                </span>
-              </a>
-
-              <a
-                href={SOCIAL_LINKS.instagram.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button--stroke"
-              >
-                <span className="button__flair"></span>
-                <span className="button__label">
-                  {SOCIAL_LINKS.instagram.label.toUpperCase()}
-                </span>
-              </a>
+            <div className="flex gap-2 mt-4">
+              {Object.values(SOCIAL_LINKS)
+                .filter((item) => item.label !== "YouTube")
+                .map((item) => (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2 px-3 border border-off-white rounded-full text-off-white text-sm"
+                    key={item.key}
+                  >
+                    <span>{item.label.toUpperCase()}</span>
+                  </a>
+                ))}
             </div>
           </div>
         </div>
 
         {/* SVG Background Elements */}
-        <div className="absolute top-[20%] left-[89%] transform -translate-x-1/2 -translate-y-1/2 z-3 w-[100vh] h-[100vh] fill-accent-warm-gray opacity-40">
+        <div className="absolute top-[35%] left-[89%] transform -translate-x-1/2 -translate-y-1/2 z-3 w-full h-full fill-warm-gray-3 opacity-10">
           <svg viewBox="0 0 100 100" className="menu-svg">
-            <circle cx="50" cy="50" r="40" fill="currentColor" />
+            <circle cx="50" cy="50" r="50" fill="currentColor" />
           </svg>
         </div>
 
-        <div className="absolute top-[25%] left-[93%] transform -translate-x-1/2 -translate-y-1/2 z-3 w-[100vh] h-[100vh] fill-accent-green opacity-30">
+        <div className="absolute top-[40%] left-[93%] transform -translate-x-1/2 -translate-y-1/2 z-3 w-full h-full fill-warm-gray-1 opacity-10">
           <svg viewBox="0 0 100 100" className="menu-svg">
-            <circle cx="50" cy="50" r="40" fill="currentColor" />
+            <circle cx="50" cy="50" r="50" fill="currentColor" />
           </svg>
         </div>
       </motion.div>

@@ -24,20 +24,20 @@ export default function TagsAnimation() {
           key={currentTagIndex}
           className="absolute bottom-0"
           style={{
-            left: `${currentTagIndex % 2 === 0 ? 0 : 70}%`,
+            left: `${currentTagIndex % 2 === 0 ? 10 : 70}%`,
           }}
           initial={{
-            y: 0,
+            y: -100,
             opacity: 0,
             scale: 0.5,
           }}
           animate={{
-            y: -150,
+            y: -250,
             opacity: [0, 1, 1, 0],
             scale: [0.5, 1, 1, 0.5],
           }}
           exit={{
-            y: -300,
+            y: -400,
             opacity: 0,
             scale: 0.5,
           }}

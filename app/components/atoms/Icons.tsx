@@ -11,7 +11,7 @@ export const GithubIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/github-icon.png"
+    src="/assets/images/icons/github-icon.svg"
     alt="GitHub"
     width={size}
     height={size}
@@ -24,7 +24,7 @@ export const LinkedInIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/linkedin-icon.png"
+    src="/assets/images/icons/linkedin-icon.svg"
     alt="LinkedIn"
     width={size}
     height={size}
@@ -37,7 +37,7 @@ export const InstagramIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/instagram-icon.png"
+    src="/assets/images/icons/instagram-icon.svg"
     alt="Instagram"
     width={size}
     height={size}
@@ -50,7 +50,7 @@ export const YouTubeIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/youtube-icon.png"
+    src="/assets/images/icons/youtube-icon.svg"
     alt="YouTube"
     width={size}
     height={size}
@@ -72,5 +72,22 @@ export const UpArrowIcon: React.FC<IconProps> = ({ className = "" }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+  </svg>
+);
+
+export const DownRightIcon: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    stroke="currentColor"
+    fill="none"
+    strokeWidth="1.25"
+    viewBox="6 6 12 12"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={`m-0 p-0 text-accent-green-light ${className}`}
+    height="1em"
+    width="1em"
+  >
+    <line x1="7" y1="7" x2="17" y2="17"></line>
+    <polyline points="17 7 17 17 7 17"></polyline>
   </svg>
 );
