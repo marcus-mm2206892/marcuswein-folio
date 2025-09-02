@@ -134,7 +134,7 @@ export const ABOUT_ME = {
   paragraphs: [
     `Growing up as an outsider in Qatar's desert lands, I discovered resilience and creativity in navigating worlds not originally my own. 
 That spirit fuels my work today, building meaningful software solutions that merge design, AI, and research. 
-Whether it's designing apps, experimenting with deep learning, or leading hackathon teams, I thrive on making technology practical, human, and a little bit unexpected.`,
+Whether it's designing apps, experimenting with deep learning, or competing in hackathons, I thrive on making technology practical, human, and a little bit unexpected.`,
 
     `Outside of tech, you'll find me piecing together Gundams, sipping coffee in random places, editing media, or pushing my small Nissan Tiida like it's a race car. 
 To me, building, whether digital or physical, isn't just what I do, it's who I am.`,

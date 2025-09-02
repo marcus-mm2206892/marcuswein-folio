@@ -41,20 +41,7 @@ export default function Footer() {
       );
     };
 
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 900);
-    };
-
-    updateTime();
-    checkMobile();
-
-    const timeInterval = setInterval(updateTime, 1000);
-    window.addEventListener("resize", checkMobile);
-
-    return () => {
-      clearInterval(timeInterval);
-      window.removeEventListener("resize", checkMobile);
-    };
+    return () => {};
   }, []);
 
   const scrollToTop = () => {

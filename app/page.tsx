@@ -9,6 +9,7 @@ import Footer from "./components/molecules/Footer";
 import Burger from "./components/molecules/Burger";
 import Sidebar from "./components/molecules/Sidebar";
 import { useState, useEffect } from "react";
+import Lenis from "lenis";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -23,6 +24,15 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }, []);
 
   const toggleSidebar = () => {
