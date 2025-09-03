@@ -41,7 +41,11 @@ export default function Footer() {
       );
     };
 
-    return () => {};
+    updateTime();
+
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToTop = () => {
