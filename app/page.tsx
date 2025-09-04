@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { SITE_CONFIG, SOCIAL_LINKS, CONTACT_DETAILS } from "./config/constants";
 import NavBar from "./components/molecules/NavBar";
-import LandingPage from "./components/molecules/LandingPage";
-import MainPage from "./components/molecules/MainPage";
-import Footer from "./components/molecules/Footer";
+import LandingPage from "./components/sections/LandingPage";
+import MainPage from "./components/sections/MainPage";
+import Footer from "./components/sections/Footer";
 import Burger from "./components/molecules/Burger";
 import Sidebar from "./components/molecules/Sidebar";
 import { useState, useEffect } from "react";
