@@ -182,13 +182,13 @@ export default function Skills() {
             <SkillsCard
               key={i}
               index={i}
-              frontSrc="/assets/images/personal/card.png" // keep the front image
+              frontSrc="/assets/images/personal/card.png"
               frontAlt="Card Image"
-              title={c.title} // back face
+              title={c.title}
               items={c.items}
               ref={(el) => {
                 cardRefs.current[i] = el;
-              }} // return void
+              }}
             />
           ))}
         </section>

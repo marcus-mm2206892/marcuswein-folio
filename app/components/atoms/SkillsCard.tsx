@@ -1,13 +1,14 @@
 import React, { forwardRef } from "react";
 import Image from "next/image";
+import Tag from "@/app/components/atoms/Tag"; // import your Tag component
+import { LucideIcon } from "lucide-react";
 
 type SkillsCardProps = {
   index: number;
-  frontSrc: string; // keep your PNG face
+  frontSrc: string;
   frontAlt: string;
-  // Back face content (TECH-style)
   title: string; // e.g. "TECH"
-  items: string[]; // e.g. ["WebGL Development", ...]
+  items: { label: string; icon: LucideIcon }[]; // new: array of tags w/ icons
 };
 
 const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
@@ -20,19 +21,15 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
         ref={ref}
         className="
           absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-          aspect-[2/3]
-          w-[clamp(160px,42vw,240px)]
-          [perspective:1000px]
+          aspect-[2/3] w-[clamp(160px,42vw,240px)] [perspective:1000px]
         "
       >
-        {/* floating wrapper */}
         <div
           className="absolute w-full h-full animate-float"
           style={{ animationDelay: `${index * 0.2}s` }}
         >
-          {/* flip container */}
           <div className="flip-card-front relative w-full h-full [transform-style:preserve-3d]">
-            {/* FRONT (unchanged image face) */}
+            {/* FRONT */}
             <div className="absolute w-full h-full [backface-visibility:hidden] overflow-hidden rounded-xl">
               <Image
                 priority
@@ -44,15 +41,8 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
               />
             </div>
 
-            {/* BACK (TECH-style) */}
-            <div
-              className="
-              flip-card-back absolute w-full h-full
-              [backface-visibility:hidden] [transform:rotateY(180deg)]
-              rounded-xl overflow-hidden
-              bg-white text-black p-6 flex flex-col
-            "
-            >
+            {/* BACK */}
+            <div className="flip-card-back absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden bg-white text-black p-6 flex flex-col">
               {/* header row */}
               <div className="flex justify-between items-start">
                 <h3 className="font-heading text-lg font-bold tracking-tight">
@@ -63,17 +53,12 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
                 </span>
               </div>
 
-              {/* list */}
-              <ul className="mt-[2.5vw] md:mt-6 space-y-4 text-[2.5vw] md:text-sm">
+              {/* tags instead of list */}
+              <div className="mt-6 flex flex-wrap gap-2">
                 {items.map((it, i) => (
-                  <li
-                    key={i}
-                    className="pb-2 border-b border-dotted border-black/40 last:border-none"
-                  >
-                    {it}
-                  </li>
+                  <Tag key={i} label={it.label} icon={it.icon} />
                 ))}
-              </ul>
+              </div>
 
               {/* upside-down footer */}
               <div className="mt-auto pt-4 flex justify-between items-end rotate-180">

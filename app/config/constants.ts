@@ -9,6 +9,19 @@ import {
   Phone,
 } from "lucide-react";
 
+import {
+  Database,
+  Braces,
+  Boxes,
+  Box,
+  Cpu,
+  Sigma,
+  Workflow,
+  GitBranch,
+  PenTool,
+  BarChart3,
+} from "lucide-react";
+
 export const SITE_CONFIG = {
   name: "Marcus Wein",
   description:
@@ -143,25 +156,42 @@ To me, building, whether digital or physical, isn't just what I do, it's who I a
 
 export const SKILLS_CARDS = [
   {
-    title: "TECH",
+    title: "LANG.",
     items: [
-      "WebGL Development",
-      "Web Development",
-      "Unity/Unreal",
-      "Interactive Installations",
+      { label: "Python", icon: Braces },
+      { label: "Java", icon: Code2 },
+      { label: "Typescript", icon: Code2 },
+      { label: "Dart", icon: Code2 },
+      { label: "C", icon: Braces },
+      { label: "SQL", icon: Database },
     ],
   },
   {
-    title: "DESIGN",
-    items: ["Brand Identity", "UI/UX", "Motion Graphics", "Typography"],
+    title: "FRAMEW.",
+    items: [
+      { label: "React", icon: Boxes },
+      { label: "Next.js", icon: Box },
+      { label: "Flutter", icon: Cpu },
+      { label: "Tailwind CSS", icon: Workflow },
+    ],
   },
   {
-    title: "RESEARCH",
-    items: ["Haptics", "LLM Interfaces", "Sensors", "Prototyping"],
+    title: "ML/AI",
+    items: [
+      { label: "PyTorch", icon: Cpu },
+      { label: "Pandas", icon: Sigma },
+      { label: "Numpy", icon: Sigma },
+      { label: "OpenCV", icon: Workflow },
+    ],
   },
   {
-    title: "PRODUCT",
-    items: ["Design Systems", "Accessibility", "Performance", "Docs"],
+    title: "TOOLS",
+    items: [
+      { label: "Figma", icon: Palette },
+      { label: "Adobe Creative", icon: PenTool },
+      { label: "Git", icon: GitBranch },
+      { label: "PowerBI", icon: BarChart3 },
+    ],
   },
 ];
 
