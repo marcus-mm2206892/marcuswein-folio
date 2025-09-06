@@ -49,8 +49,6 @@ export default function Home() {
       {/* Hero Section */}
       <LandingPage />
       <MainPage />
-      {/* Projects Section */}
-      <section className="py-16 px-6 bg-off-white min-h-[calc(100vh*3)]"></section>
 
       {/* Footer */}
       <Footer />
