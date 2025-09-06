@@ -133,13 +133,40 @@ export const ABOUT_ME = {
     "Not your typical CS student — growing up as a Filipino in Qatar taught me to see the world differently, and now I channel that into building tech with impact.",
   paragraphs: [
     `Growing up as an outsider in Qatar's desert lands, I discovered resilience and creativity in navigating worlds not originally my own. 
-That spirit fuels my work today, building meaningful software solutions that merge design, AI, and research. 
+That spirit fuels my work today, <strong>building meaningful software solutions that merge design, AI, and research.</strong>
 Whether it's designing apps, experimenting with deep learning, or competing in hackathons, I thrive on making technology practical, human, and a little bit unexpected.`,
 
     `Outside of tech, you'll find me piecing together Gundams, sipping coffee in random places, editing media, or pushing my small Nissan Tiida like it's a race car. 
 To me, building, whether digital or physical, isn't just what I do, it's who I am.`,
   ],
 };
+
+export const SKILLS_CARDS = [
+  {
+    title: "TECH",
+    items: [
+      "WebGL Development",
+      "Web Development",
+      "Unity/Unreal",
+      "Interactive Installations",
+    ],
+  },
+  {
+    title: "DESIGN",
+    items: ["Brand Identity", "UI/UX", "Motion Graphics", "Typography"],
+  },
+  {
+    title: "RESEARCH",
+    items: ["Haptics", "LLM Interfaces", "Sensors", "Prototyping"],
+  },
+  {
+    title: "PRODUCT",
+    items: ["Design Systems", "Accessibility", "Performance", "Docs"],
+  },
+];
+
+export const SKILLS_DESCRIPTION =
+  "Jack of many trades, master of Googling errors until code, design, and research projects finally behave.";
 
 export const EDUCATION = {
   university: {

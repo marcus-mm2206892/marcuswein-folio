@@ -128,6 +128,15 @@
     @apply font-heading;
   }
 
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span,
+  h5 span,
+  h6 span {
+    @apply font-heading;
+  }
+
   p,
   span {
     @apply font-body;

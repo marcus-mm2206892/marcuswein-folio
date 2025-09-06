@@ -1,11 +1,17 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // named import
 import { useGSAP } from "@gsap/react";
 import SkillsCard from "@/app/components/atoms/SkillsCard";
+import {
+  BugIcon,
+  AIIcon,
+  BatmanIcon,
+  CoffeeIcon,
+} from "@/app/components/atoms/Icons";
+import { SKILLS_CARDS, SKILLS_DESCRIPTION } from "@/app/config/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +81,7 @@ export default function Skills() {
               trigger: triggerEl,
               start: "top top",
               end: () => `+=${totalScrollHeight()}`,
-              scrub: 0.8,
+              scrub: 0.3,
               pin: true,
               pinSpacing: true,
               invalidateOnRefresh: true, // recompute on resize/rotation
@@ -97,20 +103,20 @@ export default function Skills() {
           });
 
           // PHASE 2: flip with tiny stagger (same as before)
-          const FLIP_STAGGER = isMobile ? 0.06 : 0.08;
+          const FLIP_STAGGER = isMobile ? 0.05 : 0.06;
           cards.forEach((card, i) => {
             if (!card) return;
             const front = card.querySelector(
               ".flip-card-front > div:first-child"
             )!;
             const back = card.querySelector(".flip-card-back")!;
-            tl.to(card, { rotateZ: 0, duration: 1 }, 0.5 + i * FLIP_STAGGER);
+            tl.to(card, { rotateZ: 0, duration: 1 }, 0.3 + i * FLIP_STAGGER);
             tl.to(
               front,
               { rotationY: -180, duration: 1 },
-              0.5 + i * FLIP_STAGGER
+              0.3 + i * FLIP_STAGGER
             );
-            tl.to(back, { rotationY: 0, duration: 1 }, 0.5 + i * FLIP_STAGGER);
+            tl.to(back, { rotationY: 0, duration: 1 }, 0.3 + i * FLIP_STAGGER);
           });
 
           // refresh on resize
@@ -123,21 +129,70 @@ export default function Skills() {
   );
 
   return (
-    <div ref={container} className="relative w-full">
-      <section className="cards relative w-full h-screen">
-        {[...Array(4)].map((_, i) => (
-          <SkillsCard
-            key={i}
-            index={i}
-            frontSrc="/assets/images/personal/card.jpg"
-            frontAlt="Card Image"
-            backText="Card details appear here"
-            ref={(el) => {
-              cardRefs.current[i] = el as HTMLDivElement;
-            }}
-          />
-        ))}
+    <div>
+      <section className="relative w-full">
+        {/* container with padding so content never hugs edges */}
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-6 items-start">
+            {/* LEFT: GIANT HEADING */}
+            <h1
+              className="
+              col-span-12 md:col-span-8
+              font-heading font-bold leading-[0.9] text-left tracking-tight
+              text-[clamp(2.5rem,9vw,7rem)]
+            "
+            >
+              <span className="block pl-0">AREA OF</span>
+              {/* no mobile padding; only indent on md+ */}
+              <span className="block pl-0 md:pl-[6vw]">EXPERTISE /</span>
+            </h1>
+
+            {/* RIGHT: SUPPORTING COPY */}
+            <aside className="col-span-12 md:col-span-4 md:col-start-9 self-start">
+              <div className="flex flex-col gap-4 max-w-prose">
+                <span className="font-mono text-lg md:text-xl text-accent-green">
+                  ( SKILLS )
+                </span>
+                <p className="text-base md:text-lg text-off-white">
+                  {SKILLS_DESCRIPTION}
+                </p>
+              </div>
+
+              <div className="mt-4 flex gap-3">
+                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
+                  <BatmanIcon size={20} />
+                </div>
+                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
+                  <AIIcon size={20} />
+                </div>
+                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
+                  <BugIcon size={20} />
+                </div>
+                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
+                  <CoffeeIcon size={20} />
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
       </section>
+      <div ref={container} className="relative w-full">
+        <section className="cards relative w-full h-screen">
+          {SKILLS_CARDS.map((c, i) => (
+            <SkillsCard
+              key={i}
+              index={i}
+              frontSrc="/assets/images/personal/card.png" // keep the front image
+              frontAlt="Card Image"
+              title={c.title} // back face
+              items={c.items}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }} // return void
+            />
+          ))}
+        </section>
+      </div>
     </div>
   );
 }

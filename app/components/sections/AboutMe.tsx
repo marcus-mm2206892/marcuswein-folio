@@ -24,7 +24,7 @@ export default function AboutMe() {
             <circle cx="50" cy="50" r="40" fill="currentColor" />
           </svg>
           <img
-            src="/assets/images/personal/MarcusHeadshot1.png"
+            src="/assets/images/personal/Headshot.png"
             alt="Marcus"
             className="absolute mt-[14vw] md:mt-[8vw] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-[80vw] md:h-[40vw] rounded-3xl"
           />
@@ -48,9 +48,10 @@ export default function AboutMe() {
           <span className="font-mono text-lg md:text-xl text-accent-green">
             ( ABOUT ME )
           </span>
-          <p className="text-md md:text-lg text-off-white">
-            {ABOUT_ME.paragraphs[0]}
-          </p>
+          <p
+            className="text-md md:text-lg text-off-white"
+            dangerouslySetInnerHTML={{ __html: ABOUT_ME.paragraphs[0] }}
+          />
           <p className="text-md md:text-lg text-off-white">
             {ABOUT_ME.paragraphs[1]}
           </p>

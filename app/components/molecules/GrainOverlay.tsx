@@ -6,7 +6,7 @@ interface GrainOverlayProps {
 }
 
 export default function GrainOverlay({
-  opacity = 50,
+  opacity = 70,
   zIndex = 999,
 }: GrainOverlayProps) {
   return (

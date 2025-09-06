@@ -91,3 +91,49 @@ export const DownRightIcon: React.FC<IconProps> = ({ className = "" }) => (
     <polyline points="17 7 17 17 7 17"></polyline>
   </svg>
 );
+
+export const BatmanIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/batman.svg"
+    alt="Batman"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const AIIcon: React.FC<IconProps> = ({ className = "", size = 18 }) => (
+  <Image
+    src="/assets/images/icons/ai.svg"
+    alt="AI"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const BugIcon: React.FC<IconProps> = ({ className = "", size = 18 }) => (
+  <Image
+    src="/assets/images/icons/bug.svg"
+    alt="Bug"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const CoffeeIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/coffee.svg"
+    alt="Coffee"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
