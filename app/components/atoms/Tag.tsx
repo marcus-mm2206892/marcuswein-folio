@@ -1,9 +1,14 @@
 import React from "react";
 import { LucideIcon } from "lucide-react";
 
+interface IconProps {
+  className?: string;
+  size?: number;
+}
+
 interface TagProps {
   label: string;
-  icon: LucideIcon;
+  icon: LucideIcon | React.FC<IconProps>;
   size?: "small" | "medium" | "large";
 }
 

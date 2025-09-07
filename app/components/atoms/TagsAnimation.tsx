@@ -24,7 +24,7 @@ export default function TagsAnimation() {
           key={currentTagIndex}
           className="absolute bottom-0"
           style={{
-            left: `${currentTagIndex % 2 === 0 ? 10 : 70}%`,
+            left: `${currentTagIndex % 2 === 0 ? 10 : 65}%`,
           }}
           initial={{
             y: -100,
@@ -50,6 +50,7 @@ export default function TagsAnimation() {
           <Tag
             label={tags[currentTagIndex].label}
             icon={tags[currentTagIndex].icon}
+            size="medium"
           />
         </motion.div>
       </AnimatePresence>

@@ -3,12 +3,17 @@ import Image from "next/image";
 import Tag from "@/app/components/atoms/Tag"; // import your Tag component
 import { LucideIcon } from "lucide-react";
 
+interface IconProps {
+  className?: string;
+  size?: number;
+}
+
 type SkillsCardProps = {
   index: number;
   frontSrc: string;
   frontAlt: string;
   title: string; // e.g. "TECH"
-  items: { label: string; icon: LucideIcon }[]; // new: array of tags w/ icons
+  items: { label: string; icon: LucideIcon | React.FC<IconProps> }[]; // new: array of tags w/ icons
 };
 
 const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(

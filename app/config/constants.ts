@@ -148,13 +148,13 @@ export const LANDING_PAGE = {
       label: "Frontend Dev.",
       icon: Code2,
     },
-    aiResearcher: {
-      label: "AI Researcher",
-      icon: Brain,
-    },
     webDesigner: {
       label: "Web Designer",
       icon: Layout,
+    },
+    aiResearcher: {
+      label: "AI Researcher",
+      icon: Brain,
     },
     gamer: {
       label: "Gamer",
@@ -164,8 +164,8 @@ export const LANDING_PAGE = {
       label: "Graphic Artist",
       icon: Palette,
     },
-    gundamBuilder: {
-      label: "Gundam Builder",
+    gundamAddict: {
+      label: "Gundam Addict",
       icon: Hammer,
     },
   },

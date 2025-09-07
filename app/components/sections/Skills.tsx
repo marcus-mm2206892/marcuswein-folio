@@ -81,7 +81,7 @@ export default function Skills() {
               trigger: triggerEl,
               start: "top top",
               end: () => `+=${totalScrollHeight()}`,
-              scrub: 0.3,
+              scrub: 0.5,
               pin: true,
               pinSpacing: true,
               invalidateOnRefresh: true, // recompute on resize/rotation
@@ -103,20 +103,20 @@ export default function Skills() {
           });
 
           // PHASE 2: flip with tiny stagger (same as before)
-          const FLIP_STAGGER = isMobile ? 0.05 : 0.06;
+          const FLIP_STAGGER = isMobile ? 0.06 : 0.07;
           cards.forEach((card, i) => {
             if (!card) return;
             const front = card.querySelector(
               ".flip-card-front > div:first-child"
             )!;
             const back = card.querySelector(".flip-card-back")!;
-            tl.to(card, { rotateZ: 0, duration: 1 }, 0.3 + i * FLIP_STAGGER);
+            tl.to(card, { rotateZ: 0, duration: 1 }, 0.5 + i * FLIP_STAGGER);
             tl.to(
               front,
               { rotationY: -180, duration: 1 },
-              0.3 + i * FLIP_STAGGER
+              0.5 + i * FLIP_STAGGER
             );
-            tl.to(back, { rotationY: 0, duration: 1 }, 0.3 + i * FLIP_STAGGER);
+            tl.to(back, { rotationY: 0, duration: 1 }, 0.5 + i * FLIP_STAGGER);
           });
 
           // refresh on resize
