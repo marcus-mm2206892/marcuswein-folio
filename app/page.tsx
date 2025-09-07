@@ -11,6 +11,7 @@ import Sidebar from "./components/molecules/Sidebar";
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
 import { motion, AnimatePresence } from "framer-motion";
+import Testimonials from "./components/sections/Testimonials";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -49,7 +50,7 @@ export default function Home() {
       {/* Hero Section */}
       <LandingPage />
       <MainPage />
-
+      <Testimonials />
       {/* Footer */}
       <Footer />
 

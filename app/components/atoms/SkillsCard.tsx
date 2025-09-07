@@ -42,7 +42,7 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
             </div>
 
             {/* BACK */}
-            <div className="flip-card-back absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden bg-white text-black p-6 flex flex-col">
+            <div className="flip-card-back absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl overflow-hidden bg-white text-black p-4 md:p-6 flex flex-col">
               {/* header row */}
               <div className="flex justify-between items-start">
                 <h3 className="font-heading text-lg font-bold tracking-tight">
@@ -54,14 +54,14 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
               </div>
 
               {/* tags instead of list */}
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-2 min-[466px]:mt-4 flex flex-wrap gap-2">
                 {items.map((it, i) => (
-                  <Tag key={i} label={it.label} icon={it.icon} />
+                  <Tag key={i} label={it.label} icon={it.icon} size="medium" />
                 ))}
               </div>
 
               {/* upside-down footer */}
-              <div className="mt-auto pt-4 flex justify-between items-end rotate-180">
+              <div className="hidden sm:flex mt-auto justify-between items-end rotate-180">
                 <span className="font-heading text-lg font-bold tracking-tight">
                   {title}
                 </span>
