@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   subtitle: string;
   description: string;
   icons?: React.ReactNode[];
+  superscriptNumber?: string;
 }
 
 export default function SectionHeader({
@@ -15,6 +16,7 @@ export default function SectionHeader({
   subtitle,
   description,
   icons = [],
+  superscriptNumber,
 }: SectionHeaderProps) {
   return (
     <section className="relative w-full">
@@ -31,7 +33,14 @@ export default function SectionHeader({
           >
             <span className="block pl-0">{title.line1}</span>
             {/* no mobile padding; only indent on md+ */}
-            <span className="block pl-0 md:pl-[6vw]">{title.line2}</span>
+            <span className="block pl-0 md:pl-[6vw]">
+              {title.line2}
+              {superscriptNumber && (
+                <sup className="text-[0.4em] text-gray-400 font-normal ml-1">
+                  ({superscriptNumber})
+                </sup>
+              )}
+            </span>
           </h1>
 
           {/* RIGHT: SUPPORTING COPY */}
