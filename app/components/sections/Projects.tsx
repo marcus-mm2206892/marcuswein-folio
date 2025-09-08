@@ -1,8 +1,13 @@
-import { SKILLS_DESCRIPTION } from "@/app/config/constants";
-import { AIIcon, BatmanIcon, BugIcon, CoffeeIcon } from "../atoms/Icons";
+import { PROJECTS, PROJECTS_DESCRIPTION } from "@/app/config/constants";
+import { BugIcon, CodeIcon, CoffeeIcon, SpidermanIcon } from "../atoms/Icons";
 import SectionHeader from "../molecules/SectionHeader";
+import ProjectCard from "../atoms/ProjectCard";
+import ProjectCounter from "../atoms/ProjectCounter";
+import { useRef } from "react";
 
 export default function Projects() {
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="min-h-screen">
       <SectionHeader
@@ -11,16 +16,28 @@ export default function Projects() {
           line2: "WORKS /",
         }}
         subtitle="PROJECTS"
-        description={SKILLS_DESCRIPTION}
+        description={PROJECTS_DESCRIPTION}
         superscriptNumber="5"
         icons={[
-          <BatmanIcon size={20} />,
-          <AIIcon size={20} />,
+          <SpidermanIcon size={20} />,
+          <CodeIcon size={20} />,
           <BugIcon size={20} />,
           <CoffeeIcon size={20} />,
         ]}
       />
-      <div className="min-h-screen grid grid-cols-12 gap-4 relative"></div>
+      <div
+        ref={projectsContainerRef}
+        className="mt-16 grid grid-cols-12 gap-4 relative items-start"
+      >
+        <div className="hidden md:flex col-span-5 w-full">
+          <ProjectCounter projectsContainerRef={projectsContainerRef} />
+        </div>
+        <div className="col-span-12 md:col-span-7 flex flex-col gap-16">
+          {PROJECTS.projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

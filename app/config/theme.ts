@@ -40,7 +40,7 @@ export const colors = {
 export const fonts = {
   heading: "Space Grotesk, system-ui, sans-serif",
   body: "Cabinet Grotesk, system-ui, sans-serif",
-  mono: "Noto Sans Mono, monospace",
+  mono: "Courier New, Courier, monospace",
 };
 
 export const spacing = {

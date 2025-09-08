@@ -21,14 +21,15 @@ export default function SectionHeader({
   return (
     <section className="relative w-full">
       {/* container with padding so content never hugs edges */}
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl">
         <div className="grid grid-cols-12 gap-6 items-start">
           {/* LEFT: GIANT HEADING */}
           <h1
             className="
               col-span-12 md:col-span-8
               font-heading font-bold leading-[0.9] text-left tracking-tight
-              text-[clamp(2.5rem,9vw,7rem)]
+              text-[clamp(2.8rem,12vw,7rem)]
+              md:text-[clamp(2.8rem,9vw,7rem)]
             "
           >
             <span className="block pl-0">{title.line1}</span>
@@ -36,7 +37,10 @@ export default function SectionHeader({
             <span className="block pl-0 md:pl-[6vw]">
               {title.line2}
               {superscriptNumber && (
-                <sup className="text-[0.4em] text-gray-400 font-normal ml-1">
+                <sup
+                  className="pl-2 md:pl-4 
+              text-[clamp(1.6rem,6vw,4rem)] font-heading text-gray-1 font-medium ml-1"
+                >
                   ({superscriptNumber})
                 </sup>
               )}

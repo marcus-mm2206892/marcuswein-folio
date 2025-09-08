@@ -138,7 +138,6 @@ export const CoffeeIcon: React.FC<IconProps> = ({
   />
 );
 
-// Skills Icons
 export const AdobeBlackIcon: React.FC<IconProps> = ({
   className = "",
   size = 18,
@@ -783,6 +782,58 @@ export const TypescriptColoredIcon: React.FC<IconProps> = ({
   <Image
     src="/assets/images/icons/skills_icons/typescript-colored.svg"
     alt="TypeScript"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const CodeIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/code.svg"
+    alt="Code"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const DesignIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/design.svg"
+    alt="Design"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const DuckIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/duck.svg"
+    alt="Duck"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const SpidermanIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/spiderman.svg"
+    alt="Spiderman"
     width={size}
     height={size}
     className={className}

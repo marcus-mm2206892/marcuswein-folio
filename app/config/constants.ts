@@ -1,26 +1,4 @@
-import {
-  Brain,
-  Code2,
-  Layout,
-  Palette,
-  Gamepad2,
-  Hammer,
-  Mail,
-  Phone,
-} from "lucide-react";
-
-import {
-  Database,
-  Braces,
-  Boxes,
-  Box,
-  Cpu,
-  Sigma,
-  Workflow,
-  GitBranch,
-  PenTool,
-  BarChart3,
-} from "lucide-react";
+import { Brain, Code2, Layout, Palette, Gamepad2, Hammer } from "lucide-react";
 
 // Import colored skill icons
 import {
@@ -236,6 +214,9 @@ export const SKILLS_CARDS = [
 export const SKILLS_DESCRIPTION =
   "Jack of many trades, master of Googling errors until code, design, and research projects finally behave.";
 
+export const PROJECTS_DESCRIPTION =
+  "Proof that late nights, too much coffee, and just enough passion can in fact, produce working code.";
+
 export const EDUCATION = {
   university: {
     name: "Qatar University",
@@ -258,12 +239,13 @@ export const EDUCATION = {
 
 export const EXPERIENCES = {};
 
-export const WORKS = {
-  description: `Featured projects that I've worked on that have been meticulously crafted with passion over the years`,
-  works: [
+export const PROJECTS = {
+  projects: [
     {
-      project: "CAQU Carbon Emissions Tracker",
-      organization: "Qatar University",
+      title: "CAQU Carbon Emissions Tracker",
+      organization: "S3Lab",
+      description:
+        "Web platform that helps companies calculate, track, and visualize their carbon emissions",
       year: "2025",
       tag1: "Frontend",
       tag2: "LLMs",
@@ -272,8 +254,10 @@ export const WORKS = {
       visitLink: "",
     },
     {
-      project: "CampConnect",
+      title: "CampConnect",
       organization: "CMUQ Lifelines",
+      description:
+        "Mobile app connecting displaced students with nearby educational camps in post-crisis areas",
       year: "2025",
       tag1: "Mobile Dev.",
       tag2: "Hackathon",
@@ -282,8 +266,10 @@ export const WORKS = {
       visitLink: "https://youtu.be/NW1u85gMUBk",
     },
     {
-      project: "UniTrack",
+      title: "UniTrack",
       organization: "Qatar University",
+      description:
+        "Student management system for monitoring study plans, course registration, grading, and academic progress",
       year: "2025",
       tag1: "Fullstack Dev.",
       tag2: "Design",
@@ -292,8 +278,10 @@ export const WORKS = {
       visitLink: "https://unitrack-eight.vercel.app",
     },
     {
-      project: "Makira Mobile Application",
+      title: "Makira Mobile App UI",
       organization: "Makira Beauty",
+      description:
+        "Complete app design for booking beauticians, covering onboarding, services, and profile management",
       year: "2025",
       tag1: "UI/UX Design",
       tag2: "Wireframing",
@@ -302,8 +290,10 @@ export const WORKS = {
       visitLink: "https://makira.me/",
     },
     {
-      project: "Kahramaa AMI for Smart Meters",
+      title: "Kahramaa AMI for Smart Meters",
       organization: "Siemens",
+      description:
+        "Smart metering initiative analyzing electricity consumption to support demand forecasting and energy insights",
       year: "2024",
       tag1: "Analytics",
       tag2: "PowerBI",

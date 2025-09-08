@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // named import
 import { useGSAP } from "@gsap/react";
 import SkillsCard from "@/app/components/atoms/SkillsCard";
 import SectionHeader from "@/app/components/molecules/SectionHeader";
 import {
-  BugIcon,
   AIIcon,
   BatmanIcon,
-  CoffeeIcon,
+  DuckIcon,
+  DesignIcon,
 } from "@/app/components/atoms/Icons";
 import { SKILLS_CARDS, SKILLS_DESCRIPTION } from "@/app/config/constants";
 
@@ -141,8 +141,8 @@ export default function Skills() {
         icons={[
           <BatmanIcon size={20} />,
           <AIIcon size={20} />,
-          <BugIcon size={20} />,
-          <CoffeeIcon size={20} />,
+          <DesignIcon size={20} />,
+          <DuckIcon size={20} />,
         ]}
       />
       <div ref={container} className="relative w-full">

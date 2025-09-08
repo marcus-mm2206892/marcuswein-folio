@@ -137,8 +137,7 @@
     @apply font-heading;
   }
 
-  p,
-  span {
+  p {
     @apply font-body;
   }
 
