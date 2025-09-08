@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // named import
 import { useGSAP } from "@gsap/react";
 import SkillsCard from "@/app/components/atoms/SkillsCard";
+import SectionHeader from "@/app/components/molecules/SectionHeader";
 import {
   BugIcon,
   AIIcon,
@@ -130,52 +131,20 @@ export default function Skills() {
 
   return (
     <div>
-      <section className="relative w-full">
-        {/* container with padding so content never hugs edges */}
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-6 items-start">
-            {/* LEFT: GIANT HEADING */}
-            <h1
-              className="
-              col-span-12 md:col-span-8
-              font-heading font-bold leading-[0.9] text-left tracking-tight
-              text-[clamp(2.5rem,9vw,7rem)]
-            "
-            >
-              <span className="block pl-0">AREA OF</span>
-              {/* no mobile padding; only indent on md+ */}
-              <span className="block pl-0 md:pl-[6vw]">EXPERTISE /</span>
-            </h1>
-
-            {/* RIGHT: SUPPORTING COPY */}
-            <aside className="col-span-12 md:col-span-4 md:col-start-9 self-start">
-              <div className="flex flex-col gap-4 max-w-prose">
-                <span className="font-mono text-lg md:text-xl text-accent-green">
-                  ( SKILLS )
-                </span>
-                <p className="text-base md:text-lg text-off-white">
-                  {SKILLS_DESCRIPTION}
-                </p>
-              </div>
-
-              <div className="mt-4 flex gap-3">
-                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
-                  <BatmanIcon size={20} />
-                </div>
-                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
-                  <AIIcon size={20} />
-                </div>
-                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
-                  <BugIcon size={20} />
-                </div>
-                <div className="h-9 w-9 rounded-md border border-accent-green flex items-center justify-center">
-                  <CoffeeIcon size={20} />
-                </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
+      <SectionHeader
+        title={{
+          line1: "AREA OF",
+          line2: "EXPERTISE /",
+        }}
+        subtitle="SKILLS"
+        description={SKILLS_DESCRIPTION}
+        icons={[
+          <BatmanIcon size={20} />,
+          <AIIcon size={20} />,
+          <BugIcon size={20} />,
+          <CoffeeIcon size={20} />,
+        ]}
+      />
       <div ref={container} className="relative w-full">
         <section className="cards relative w-full h-screen">
           {SKILLS_CARDS.map((c, i) => (
