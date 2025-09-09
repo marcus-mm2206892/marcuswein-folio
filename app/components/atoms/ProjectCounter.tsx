@@ -14,6 +14,7 @@ export default function ProjectCounter({
 }: ProjectCounterProps) {
   const counterRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentNumber, setCurrentNumber] = React.useState(1);
 
   useEffect(() => {
     if (
@@ -57,7 +58,26 @@ export default function ProjectCounter({
 
     window.addEventListener("resize", handleWindowResize);
 
-    // check if we are near the bottom of the projects section
+    // Simple viewport watcher - just update the number based on which project is in view
+    const projectCards = projectsContainer.querySelectorAll(
+      ".col-span-12.md\\:col-span-7 > div"
+    );
+
+    projectCards.forEach((card, index) => {
+      ScrollTrigger.create({
+        trigger: card as HTMLElement,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+          setCurrentNumber(index + 1);
+        },
+        onEnterBack: () => {
+          setCurrentNumber(index + 1);
+        },
+      });
+    });
+
+    // Keep the counter in its original position
     ScrollTrigger.create({
       trigger: projectsContainer,
       start: "top top",
@@ -93,7 +113,7 @@ export default function ProjectCounter({
         style={{ willChange: "transform" }}
       >
         <span>0</span>
-        <span>1</span>
+        <span>{currentNumber}</span>
         <span>.</span>
       </div>
     </div>
