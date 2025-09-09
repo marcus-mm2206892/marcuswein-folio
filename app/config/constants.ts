@@ -251,7 +251,7 @@ export const PROJECTS = {
       tag2: "LLMs",
       backgroundImage: "/assets/images/backgrounds/bg1.jpg",
       video: "",
-      visitLink: "",
+      visitLink: "https://s3lab.net",
     },
     {
       title: "CampConnect",
@@ -299,7 +299,8 @@ export const PROJECTS = {
       tag2: "PowerBI",
       backgroundImage: "/assets/images/backgrounds/bg5.jpg",
       video: "",
-      visitLink: "",
+      visitLink:
+        "https://www.linkedin.com/posts/siemens_siemens-qatar-was-the-perfect-launchpad-activity-7268851488976773121-PX3c?utm_source=share&utm_medium=member_desktop",
     },
   ],
 };

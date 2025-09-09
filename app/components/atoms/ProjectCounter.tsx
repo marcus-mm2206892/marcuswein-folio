@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,6 +15,9 @@ export default function ProjectCounter({
   const counterRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentNumber, setCurrentNumber] = React.useState(1);
+  const numberSlotRef = useRef<HTMLSpanElement>(null);
+  const prevNumberRef = useRef<number>(1);
+  const scrollDirectionRef = useRef<1 | -1>(1);
 
   useEffect(() => {
     if (
@@ -69,10 +72,16 @@ export default function ProjectCounter({
         start: "top center",
         end: "bottom center",
         onEnter: () => {
-          setCurrentNumber(index + 1);
+          setCurrentNumber((prev) => {
+            prevNumberRef.current = prev;
+            return index + 1;
+          });
         },
         onEnterBack: () => {
-          setCurrentNumber(index + 1);
+          setCurrentNumber((prev) => {
+            prevNumberRef.current = prev;
+            return index + 1;
+          });
         },
       });
     });
@@ -85,6 +94,7 @@ export default function ProjectCounter({
       scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
+        scrollDirectionRef.current = (self.direction as 1 | -1) || 1;
 
         // keep the counter in its original position
         gsap.set(counter, {
@@ -105,15 +115,64 @@ export default function ProjectCounter({
     };
   }, [projectsContainerRef]);
 
+  // Animate digit transition based on scroll direction whenever currentNumber changes
+  useLayoutEffect(() => {
+    if (!numberSlotRef.current) return;
+
+    const oldDigit = numberSlotRef.current.querySelector(
+      ".digit-old"
+    ) as HTMLElement | null;
+    const newDigit = numberSlotRef.current.querySelector(
+      ".digit-new"
+    ) as HTMLElement | null;
+
+    if (!oldDigit || !newDigit) return;
+
+    const direction = scrollDirectionRef.current; // 1 = scrolling down, -1 = up
+
+    // Position incoming digit off-screen in the proper direction
+    gsap.set(oldDigit, { yPercent: 0 });
+    gsap.set(newDigit, { yPercent: direction === 1 ? 100 : -100 });
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.45, ease: "power2.out" },
+    });
+    tl.to(oldDigit, { yPercent: direction === 1 ? -100 : 100 }, 0);
+    tl.to(newDigit, { yPercent: 0 }, 0);
+
+    return () => {
+      tl.kill();
+    };
+  }, [currentNumber]);
+
   return (
     <div ref={containerRef} className="relative w-full">
       <div
         ref={counterRef}
-        className="text-[20vw] leading-none font-mono font-bold sticky top-8"
+        className="text-[20vw] leading-none font-mono font-bold sticky top-8 flex items-end"
         style={{ willChange: "transform" }}
       >
         <span>0</span>
-        <span>{currentNumber}</span>
+        <span
+          ref={numberSlotRef}
+          className="relative inline-block h-[1em] w-[1ch] overflow-hidden align-baseline"
+          style={{ willChange: "transform" }}
+        >
+          <span
+            key={`old-${prevNumberRef.current}`}
+            className="digit-old absolute inset-0 will-change-transform"
+            style={{ transform: "translateY(0%)" }}
+          >
+            {prevNumberRef.current}
+          </span>
+          <span
+            key={`new-${currentNumber}`}
+            className="digit-new absolute inset-0 will-change-transform"
+            style={{ transform: "translateY(0%)" }}
+          >
+            {currentNumber}
+          </span>
+        </span>
         <span>.</span>
       </div>
     </div>
