@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -19,7 +20,14 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <div className="w-full h-auto max-h-[75vh] aspect-square relative bg-red-500"></div>
+      <div className="w-full h-auto max-h-[75vh] aspect-square relative">
+        <Image
+          src={project.backgroundImage}
+          alt={project.title}
+          fill
+          className="object-cover"
+        />
+      </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm font-mono text-accent-green font-bold">
           ( {project.organization} )
