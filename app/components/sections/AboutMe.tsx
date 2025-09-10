@@ -44,15 +44,15 @@ export default function AboutMe() {
       </div>
       <div className="col-span-12 md:col-span-5 flex items-center justify-center">
         {/* Content */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 pt-8 md:pt-0">
           <span className="font-mono text-lg md:text-xl text-accent-green">
             ( ABOUT ME )
           </span>
           <p
-            className="text-md md:text-lg text-off-white"
+            className="text-base md:text-xl text-off-white"
             dangerouslySetInnerHTML={{ __html: ABOUT_ME.paragraphs[0] }}
           />
-          <p className="text-md md:text-lg text-off-white">
+          <p className="text-base md:text-xl text-off-white">
             {ABOUT_ME.paragraphs[1]}
           </p>
         </div>
