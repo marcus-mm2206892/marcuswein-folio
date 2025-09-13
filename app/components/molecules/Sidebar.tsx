@@ -65,6 +65,28 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 onMouseLeave={handleLinkLeave}
                 whileHover={{ x: 12 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (item.href === "/") {
+                    // home link should scroll to the top
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else {
+                    // scroll to the section with offset
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      const elementPosition =
+                        element.getBoundingClientRect().top;
+                      const offsetPosition =
+                        elementPosition + window.pageYOffset - 100; // 100px offset from top
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }
+                  onClose();
+                }}
               >
                 <motion.div
                   className="w-2 h-2 bg-off-white rounded-full absolute left-[-1.5rem]"

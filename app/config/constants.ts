@@ -162,118 +162,93 @@ To me, building, whether digital or physical, isn't just what I do, it's who I a
   ],
 };
 
-export const SKILLS_CARDS = [
-  {
-    title: "LANG.",
-    items: [
-      { label: "Python", icon: PythonColoredIcon },
-      { label: "Java", icon: JavaBlackIcon },
-      { label: "Typescript", icon: TypescriptColoredIcon },
-      { label: "C", icon: CColoredIcon },
-      { label: "Dart", icon: DartColoredIcon },
-      { label: "SQL", icon: SqlColoredIcon },
-      { label: "HTML/CSS", icon: HtmlColoredIcon },
-      { label: "Bash", icon: BashBlackIcon },
-    ],
-  },
-  {
-    title: "SOFTW.",
-    items: [
-      { label: "React", icon: ReactColoredIcon },
-      { label: "Next.js", icon: NextColoredIcon },
-      { label: "Flutter", icon: FlutterColoredIcon },
-      { label: "Prisma", icon: PrismaBlackIcon },
-      { label: "Git", icon: GitColoredIcon },
-      { label: "Firebase", icon: FirebaseColoredIcon },
-      { label: "Tailwind CSS", icon: TailwindcssColoredIcon },
-      { label: "Postman", icon: PostmanColoredIcon },
-    ],
-  },
-  {
-    title: "DATA/ML/AI",
-    items: [
-      { label: "PyTorch", icon: PytorchColoredIcon },
-      { label: "Numpy", icon: NumpyColoredIcon },
-      { label: "Pandas", icon: PandasColoredIcon },
-      { label: "OpenCV", icon: OpencvColoredIcon },
-      { label: "Hugging Face", icon: HuggingfaceColoredIcon },
-    ],
-  },
-  {
-    title: "TOOLS",
-    items: [
-      { label: "Adobe Creative", icon: AdobeColoredIcon },
-      { label: "Figma", icon: FigmaColoredIcon },
-      { label: "MATLAB", icon: MatlabColoredIcon },
-      { label: "SPSS", icon: SpssBlackIcon },
-      { label: "PowerBI", icon: PowerbiColoredIcon },
-    ],
-  },
-];
-
-export const SKILLS_DESCRIPTION =
-  "Jack of many trades, master of Googling errors until code, design, and research projects finally behave.";
-
-export const PROJECTS_DESCRIPTION =
-  "Proof that late nights, too much coffee, and just enough passion can in fact, produce working code.";
-
-export const EDUCATION = {
-  university: {
-    name: "Qatar University",
-    year: "2022 - Present",
-    degree: "B.Sc. in Computer Science",
-    gpa: "CGPA: 4.00",
-    distinctions: {
-      talentScholarship: {
-        title: "Talent Scholarship in Research, Technology, and Innovation",
-        link: "https://www.qu.edu.qa/en-us/students/admission/scholarships/Pages/types.aspx",
-      },
-      deansList: {
-        title: `Dean's List (2022 - Present)`,
-        link: "https://www.qu.edu.qa/en-us/students/registration/student-records/Pages/academic-honors.aspx",
-      },
-    },
-    link: "https://www.qu.edu.qa/en-us/",
-  },
-};
+export const EXPERIENCES_DESCRIPTION =
+  "Real-world XP in code, teamwork, and the delicate art of surviving deadlines.";
 
 export const EXPERIENCES = [
   {
     title: "Siemens",
-    description: "Experience",
+    role: "Grid Software Intern",
+    description: [
+      "Developed Power BI dashboards to analyze smart meter electricity data and provide insights into consumption behavior",
+      "Preprocessed millions of records in Python for demand forecasting using regression and weather data",
+      "Configured and monitored RFID for 26 electric chargers at Doha Festival City",
+      "Contributed to a 1.5M QAR cybersecurity tender document for Kahramaa",
+    ],
     src: "/assets/images/backgrounds/bg1.jpg",
-    link: "https://www.qu.edu.qa/en-us/",
-    color: "#BBACAF",
+    logo: "/assets/images/logos/siemens.png",
+    date: "Jun 2024 – Jul 2024",
+    location: "Doha, Qatar",
+    link: "https://www.siemens.com",
+    color: "#585847", // start (medium-dark)
   },
   {
     title: "Hamad Medical Corporation",
-    description: "Experience",
+    role: "AI/ML Research Intern",
+    description: [
+      "Applied deep learning techniques in surgical healthcare research for medical image analysis",
+      "Explored CNNs, vision transformers, and pretrained architectures for surgical AI models",
+      "Engaged in scientific writing, secondary research, and evaluation of model performance",
+      "Authored a literature review on Vision-Language Models in surgery",
+    ],
     src: "/assets/images/backgrounds/bg2.jpg",
-    link: "https://www.qu.edu.qa/en-us/",
-    color: "#8C8C73",
+    logo: "/assets/images/logos/hmc.png",
+    date: "Mar 2025 – Present",
+    location: "Doha, Qatar",
+    link: "https://www.hamad.qa",
+    color: "#4E4E3F", // darker
   },
   {
     title: "Qatar University",
-    description: "Experience",
+    role: "Frontend Development Intern",
+    description: [
+      "Built the frontend of a carbon emissions tracking platform for companies",
+      "Connected APIs to display and process sustainability data through the UI",
+      "Collaborated with backend and research teams to integrate AI-powered chat and data visualization features",
+    ],
     src: "/assets/images/backgrounds/bg3.jpg",
-    link: "https://www.qu.edu.qa/en-us/",
-    color: "#C2491D",
+    logo: "/assets/images/logos/qu.png",
+    date: "Aug 2025 – Present",
+    location: "Doha, Qatar",
+    link: "https://www.qu.edu.qa",
+    color: "#3F3F32", // darker
   },
   {
     title: "Makira Beauty",
-    description: "Experience",
+    role: "Software Development Intern",
+    description: [
+      "Designed and refined 200+ app screens in Figma for a beautician booking app",
+      "Mapped functionality with ER, class, and use-case diagrams",
+      "Worked with the team to turn requirements into user journeys and features",
+      "Validated features with stakeholders and ensured consistent UI/UX design",
+    ],
     src: "/assets/images/backgrounds/bg4.jpg",
-    link: "https://www.qu.edu.qa/en-us/",
-    color: "#B62429",
+    logo: "/assets/images/logos/makira.png",
+    date: "Jun 2025 – Aug 2025",
+    location: "Doha, Qatar",
+    link: "https://www.makira-beauty.com",
+    color: "#333328", // even darker
   },
   {
     title: "Qatar University",
-    description: "Experience",
+    role: "Summer Research Intern",
+    description: [
+      "Designed and trained a CNN helmet pose detection model (EfficientNet-B3) with ~95% accuracy",
+      "Collected and labeled custom image datasets to classify distracted vs. attentive motorcycle riders",
+      "Prototyped a mobile app with OpenCV and Flutter for real-time detection, GPS speed tracking, and alerts",
+      "Prepared groundwork for TensorFlow Lite integration on mobile devices",
+    ],
     src: "/assets/images/backgrounds/bg5.jpg",
-    link: "https://www.qu.edu.qa/en-us/",
-    color: "#88A28D",
+    logo: "/assets/images/logos/qu.png",
+    date: "May 2025 – Jul 2025",
+    location: "Doha, Qatar",
+    link: "https://www.qu.edu.qa",
+    color: "#26261F", // darkest
   },
 ];
+
+export const PROJECTS_DESCRIPTION =
+  "Proof that late nights, too much coffee, and just enough passion can in fact, produce working code.";
 
 export const PROJECTS = {
   projects: [
@@ -340,3 +315,75 @@ export const PROJECTS = {
     },
   ],
 };
+
+export const SKILLS_DESCRIPTION =
+  "Jack of many trades, master of Googling errors until code, design, and research projects finally behave.";
+
+export const SKILLS_CARDS = [
+  {
+    title: "LANG.",
+    items: [
+      { label: "Python", icon: PythonColoredIcon },
+      { label: "Java", icon: JavaBlackIcon },
+      { label: "Typescript", icon: TypescriptColoredIcon },
+      { label: "C", icon: CColoredIcon },
+      { label: "Dart", icon: DartColoredIcon },
+      { label: "SQL", icon: SqlColoredIcon },
+      { label: "HTML/CSS", icon: HtmlColoredIcon },
+      { label: "Bash", icon: BashBlackIcon },
+    ],
+  },
+  {
+    title: "SOFTW.",
+    items: [
+      { label: "React", icon: ReactColoredIcon },
+      { label: "Next.js", icon: NextColoredIcon },
+      { label: "Flutter", icon: FlutterColoredIcon },
+      { label: "Prisma", icon: PrismaBlackIcon },
+      { label: "Git", icon: GitColoredIcon },
+      { label: "Firebase", icon: FirebaseColoredIcon },
+      { label: "Tailwind CSS", icon: TailwindcssColoredIcon },
+      { label: "Postman", icon: PostmanColoredIcon },
+    ],
+  },
+  {
+    title: "DATA/ML/AI",
+    items: [
+      { label: "PyTorch", icon: PytorchColoredIcon },
+      { label: "Numpy", icon: NumpyColoredIcon },
+      { label: "Pandas", icon: PandasColoredIcon },
+      { label: "OpenCV", icon: OpencvColoredIcon },
+      { label: "Hugging Face", icon: HuggingfaceColoredIcon },
+    ],
+  },
+  {
+    title: "TOOLS",
+    items: [
+      { label: "Adobe Creative", icon: AdobeColoredIcon },
+      { label: "Figma", icon: FigmaColoredIcon },
+      { label: "MATLAB", icon: MatlabColoredIcon },
+      { label: "SPSS", icon: SpssBlackIcon },
+      { label: "PowerBI", icon: PowerbiColoredIcon },
+    ],
+  },
+];
+
+// export const EDUCATION = {
+//   university: {
+//     name: "Qatar University",
+//     year: "2022 - Present",
+//     degree: "B.Sc. in Computer Science",
+//     gpa: "CGPA: 4.00",
+//     distinctions: {
+//       talentScholarship: {
+//         title: "Talent Scholarship in Research, Technology, and Innovation",
+//         link: "https://www.qu.edu.qa/en-us/students/admission/scholarships/Pages/types.aspx",
+//       },
+//       deansList: {
+//         title: `Dean's List (2022 - Present)`,
+//         link: "https://www.qu.edu.qa/en-us/students/registration/student-records/Pages/academic-honors.aspx",
+//       },
+//     },
+//     link: "https://www.qu.edu.qa/en-us/",
+//   },
+// };

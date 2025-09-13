@@ -48,11 +48,15 @@ export default function Home() {
     <main className="min-h-screen bg-off-white text-gray-3">
       <NavBar />
       {/* Hero Section */}
-      <LandingPage />
+      <section id="home">
+        <LandingPage />
+      </section>
       <MainPage />
       <Testimonials />
       {/* Footer */}
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
 
       {/* Burger Menu - Show after 50vh or when sidebar is open */}
       <Burger

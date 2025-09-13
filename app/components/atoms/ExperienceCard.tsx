@@ -14,7 +14,11 @@ import { useRef } from "react";
 interface ExperienceCardProps {
   i: number;
   title: string;
-  description: string;
+  role: string;
+  description: Array<string>;
+  logo: string;
+  date: string;
+  location: string;
   src: string;
   link: string;
   color: string;
@@ -26,7 +30,11 @@ interface ExperienceCardProps {
 export default function ExperienceCard({
   i,
   title,
+  role,
   description,
+  logo,
+  date,
+  location,
   src,
   link,
   color,
@@ -57,7 +65,7 @@ export default function ExperienceCard({
       >
         <h2 className="text-center m-0 text-xl">{title}</h2>
         <div className="flex h-full mt-12 gap-12">
-          <div className="desc w-[40%] relative top-[10%]">
+          <div className="w-[50%] relative top-[10%]">
             <p className="text-base first-letter:text-2xl">{description}</p>
             <span className="flex items-center gap-1">
               <Link
@@ -83,7 +91,12 @@ export default function ExperienceCard({
           </div>
           <div className="imgContainer relative w-[60%] h-full rounded-3xl overflow-hidden">
             <motion.div style={{ scale: imageScale }} className="w-full h-full">
-              <Image fill src={src} alt="image" className="object-cover" />
+              <Image
+                fill
+                src={src}
+                alt="image"
+                className="hidden sm:block object-cover"
+              />
             </motion.div>
           </div>
         </div>

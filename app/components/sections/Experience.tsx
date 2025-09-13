@@ -3,8 +3,20 @@
 import React from "react";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { EXPERIENCES } from "@/app/config/constants";
+import { EXPERIENCES, EXPERIENCES_DESCRIPTION } from "@/app/config/constants";
 import ExperienceCard from "../atoms/ExperienceCard";
+import SectionHeader from "../molecules/SectionHeader";
+import {
+  BobaFettIcon,
+  BugIcon,
+  CodeIcon,
+  CoffeeIcon,
+  HeartIcon,
+  SpidermanIcon,
+  TeamIcon,
+  WorkIcon,
+} from "../atoms/Icons";
+import Timeline from "../atoms/Timeline";
 
 export default function Experience() {
   const container = useRef<HTMLDivElement>(null);
@@ -14,7 +26,22 @@ export default function Experience() {
   });
 
   return (
-    <div ref={container} className="min-h-screen relative">
+    <div ref={container} className="min-h-screen relative" id="journey">
+      <SectionHeader
+        title={{
+          line1: "JOURNEY",
+          line2: "SO FAR /",
+        }}
+        subtitle="ADVENTURES"
+        description={EXPERIENCES_DESCRIPTION}
+        superscriptNumber="5"
+        icons={[
+          <BobaFettIcon size={20} />,
+          <HeartIcon size={20} />,
+          <WorkIcon size={20} />,
+          <TeamIcon size={20} />,
+        ]}
+      />
       {EXPERIENCES.map((experience, index) => {
         const targetScale = 1 - (EXPERIENCES.length - index) * 0.05;
         return (

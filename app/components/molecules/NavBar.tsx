@@ -17,14 +17,21 @@ export default function NavBar() {
           {/* Logo/Brand */}
           <div className="flex-shrink-0 flex flex-col md:flex-row items-start justify-start md:items-center md:justify-start gap-4 md:gap-12">
             <div>
-              <Link href={NAVIGATION.home.href} aria-label="Go to homepage">
+              <a
+                href={NAVIGATION.home.href}
+                aria-label="Go to homepage"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
                 <img
-                  className="h-12 w-auto"
+                  className="h-12 w-auto cursor-pointer"
                   src="/assets/images/personal/mwlogo.png"
                   alt="Marcus Wein Logo"
                   draggable="false"
                 />
-              </Link>
+              </a>
             </div>
             <div>
               <span className="text-sm md:text-md font-mono text-gray-3 whitespace-normal">
@@ -42,13 +49,28 @@ export default function NavBar() {
             {Object.values(NAVIGATION)
               .filter((item) => item.id !== "home")
               .map((item) => (
-                <Link
+                <a
                   key={item.id}
                   href={item.href}
-                  className="text-gray-1 rounded-md text-md font-body font-medium"
+                  className="text-gray-1 rounded-md text-md font-body font-medium cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      const elementPosition =
+                        element.getBoundingClientRect().top;
+                      const offsetPosition =
+                        elementPosition + window.pageYOffset - 100; // 100px offset from top
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
           </nav>
         </div>

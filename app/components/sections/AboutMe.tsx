@@ -4,7 +4,10 @@ import { ABOUT_ME } from "@/app/config/constants";
 
 export default function AboutMe() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-12 gap-4 relative">
+    <section
+      className="grid grid-cols-1 md:grid-cols-12 gap-4 relative"
+      id="about"
+    >
       <div className="col-span-12">
         <DownRightIcon className="w-10 h-10" />
       </div>

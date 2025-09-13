@@ -20,12 +20,12 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <div className="w-full h-auto max-h-[75vh] aspect-square relative">
+      <div className="w-full h-auto max-h-[75vh] aspect-square relative ">
         <Image
           src={project.backgroundImage}
           alt={project.title}
           fill
-          className="object-cover"
+          className="object-cover rounded-xl"
         />
       </div>
       <div className="flex flex-col gap-2">

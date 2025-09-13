@@ -9,7 +9,7 @@ export default function Projects() {
   const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="projects">
       <SectionHeader
         title={{
           line1: "SELECTED",

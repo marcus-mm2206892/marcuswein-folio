@@ -97,7 +97,7 @@ export const BatmanIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/batman.svg"
+    src="/assets/images/icons/section_header_icons/batman.svg"
     alt="Batman"
     width={size}
     height={size}
@@ -107,7 +107,7 @@ export const BatmanIcon: React.FC<IconProps> = ({
 
 export const AIIcon: React.FC<IconProps> = ({ className = "", size = 18 }) => (
   <Image
-    src="/assets/images/icons/ai.svg"
+    src="/assets/images/icons/section_header_icons/ai.svg"
     alt="AI"
     width={size}
     height={size}
@@ -117,7 +117,7 @@ export const AIIcon: React.FC<IconProps> = ({ className = "", size = 18 }) => (
 
 export const BugIcon: React.FC<IconProps> = ({ className = "", size = 18 }) => (
   <Image
-    src="/assets/images/icons/bug.svg"
+    src="/assets/images/icons/section_header_icons/bug.svg"
     alt="Bug"
     width={size}
     height={size}
@@ -130,7 +130,7 @@ export const CoffeeIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/coffee.svg"
+    src="/assets/images/icons/section_header_icons/coffee.svg"
     alt="Coffee"
     width={size}
     height={size}
@@ -793,7 +793,7 @@ export const CodeIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/code.svg"
+    src="/assets/images/icons/section_header_icons/code.svg"
     alt="Code"
     width={size}
     height={size}
@@ -806,7 +806,7 @@ export const DesignIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/design.svg"
+    src="/assets/images/icons/section_header_icons/design.svg"
     alt="Design"
     width={size}
     height={size}
@@ -819,7 +819,7 @@ export const DuckIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/duck.svg"
+    src="/assets/images/icons/section_header_icons/duck.svg"
     alt="Duck"
     width={size}
     height={size}
@@ -832,8 +832,60 @@ export const SpidermanIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/spiderman.svg"
+    src="/assets/images/icons/section_header_icons/spiderman.svg"
     alt="Spiderman"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const BobaFettIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/section_header_icons/bobafett.svg"
+    alt="Boba Fett"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const HeartIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/section_header_icons/heart.svg"
+    alt="Heart"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const WorkIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/section_header_icons/work.svg"
+    alt="Work"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const TeamIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/section_header_icons/team.svg"
+    alt="Team"
     width={size}
     height={size}
     className={className}
