@@ -237,7 +237,43 @@ export const EDUCATION = {
   },
 };
 
-export const EXPERIENCES = {};
+export const EXPERIENCES = [
+  {
+    title: "Siemens",
+    description: "Experience",
+    src: "/assets/images/backgrounds/bg1.jpg",
+    link: "https://www.qu.edu.qa/en-us/",
+    color: "bg-accent-green",
+  },
+  {
+    title: "Hamad Medical Corporation",
+    description: "Experience",
+    src: "/assets/images/backgrounds/bg2.jpg",
+    link: "https://www.qu.edu.qa/en-us/",
+    color: "bg-accent-green",
+  },
+  {
+    title: "Qatar University",
+    description: "Experience",
+    src: "/assets/images/backgrounds/bg3.jpg",
+    link: "https://www.qu.edu.qa/en-us/",
+    color: "bg-accent-green",
+  },
+  {
+    title: "Makira Beauty",
+    description: "Experience",
+    src: "/assets/images/backgrounds/bg4.jpg",
+    link: "https://www.qu.edu.qa/en-us/",
+    color: "bg-accent-green",
+  },
+  {
+    title: "Qatar University",
+    description: "Experience",
+    src: "/assets/images/backgrounds/bg5.jpg",
+    link: "https://www.qu.edu.qa/en-us/",
+    color: "bg-accent-green",
+  },
+];
 
 export const PROJECTS = {
   projects: [

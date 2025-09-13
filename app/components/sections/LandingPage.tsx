@@ -83,7 +83,7 @@ export default function LandingPage() {
 
               <div className="overflow-hidden">
                 <button className="group relative flex h-fit w-fit items-center justify-center overflow-hidden rounded-full bg-accent-dark-green font-bold uppercase tracking-wide text-white px-6 py-4 text-lg">
-                  <span className="relative">Download CV ↗</span>
+                  <span className="relative">VIEW MY CV ↗</span>
                 </button>
               </div>
             </div>
