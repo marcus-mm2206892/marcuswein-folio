@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { fonts } from "./config/theme";
-import { SITE_CONFIG } from "./config/constants";
+import { SITE_CONFIG } from "./config/data";
 import NavBar from "./components/molecules/NavBar";
 import GrainOverlay from "./components/molecules/GrainOverlay";
 import { Space_Grotesk } from "next/font/google";

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Tag from "./Tag";
-import { LANDING_PAGE } from "@/app/config/constants";
+import { LANDING_PAGE } from "@/app/config/data";
 
 export default function TagsAnimation() {
   const tags = Object.values(LANDING_PAGE.popupTexts);

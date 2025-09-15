@@ -6,7 +6,7 @@ import {
   CONTACT_DETAILS,
   SITE_CONFIG,
   NAVIGATION,
-} from "@/app/config/constants";
+} from "@/app/config/data";
 import {
   GithubIcon,
   LinkedInIcon,

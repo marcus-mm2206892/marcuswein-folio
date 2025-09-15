@@ -2,11 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  NAVIGATION,
-  SOCIAL_LINKS,
-  CONTACT_DETAILS,
-} from "@/app/config/constants";
+import { NAVIGATION, SOCIAL_LINKS, CONTACT_DETAILS } from "@/app/config/data";
 import {
   GithubIcon,
   LinkedInIcon,

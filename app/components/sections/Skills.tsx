@@ -12,7 +12,7 @@ import {
   DuckIcon,
   DesignIcon,
 } from "@/app/components/atoms/Icons";
-import { SKILLS_CARDS, SKILLS_DESCRIPTION } from "@/app/config/constants";
+import { SKILLS_CARDS, SKILLS_DESCRIPTION } from "@/app/config/data";
 
 gsap.registerPlugin(ScrollTrigger);
 

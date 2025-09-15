@@ -1,6 +1,6 @@
 import React from "react";
 import { DownRightIcon } from "../atoms/Icons";
-import { ABOUT_ME } from "@/app/config/constants";
+import { ABOUT_ME } from "@/app/config/data";
 
 export default function AboutMe() {
   return (

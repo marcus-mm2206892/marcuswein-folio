@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 
 interface Project {
@@ -18,15 +18,55 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !project.video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(console.error);
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Play when 50% of video is visible
+      }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [project.video]);
+
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <div className="w-full h-auto max-h-[75vh] aspect-square relative ">
+      <div className="w-full h-auto max-h-[75vh] aspect-square relative">
         <Image
           src={project.backgroundImage}
           alt={project.title}
           fill
           className="object-cover rounded-xl"
         />
+        {project.video && (
+          <video
+            ref={videoRef}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 object-cover rounded-lg shadow-2xl"
+            muted
+            loop
+            playsInline
+          >
+            <source src={project.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-sm font-mono text-accent-green font-bold">

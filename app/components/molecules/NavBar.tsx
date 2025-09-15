@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { LANDING_PAGE, NAVIGATION } from "@/app/config/constants";
+import { LANDING_PAGE, NAVIGATION } from "@/app/config/data";
 
 export default function NavBar() {
   return (

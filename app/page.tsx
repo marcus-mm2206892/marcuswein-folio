@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { SITE_CONFIG, SOCIAL_LINKS, CONTACT_DETAILS } from "./config/constants";
+import { SITE_CONFIG, SOCIAL_LINKS, CONTACT_DETAILS } from "./config/data";
 import NavBar from "./components/molecules/NavBar";
 import LandingPage from "./components/sections/LandingPage";
 import MainPage from "./components/sections/MainPage";
@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Lenis from "lenis";
 import { motion, AnimatePresence } from "framer-motion";
 import Testimonials from "./components/sections/Testimonials";
+import Contact from "./components/sections/Contact";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -52,11 +53,9 @@ export default function Home() {
         <LandingPage />
       </section>
       <MainPage />
-      <Testimonials />
-      {/* Footer */}
-      <section id="contact">
-        <Footer />
-      </section>
+      {/* <Testimonials /> */}
+      <Contact />
+      <Footer />
 
       {/* Burger Menu - Show after 50vh or when sidebar is open */}
       <Burger

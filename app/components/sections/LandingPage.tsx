@@ -1,6 +1,6 @@
 "use client";
 
-import { LANDING_PAGE } from "@/app/config/constants";
+import { LANDING_PAGE } from "@/app/config/data";
 import React, { useEffect, useState } from "react";
 import Canvas from "../molecules/Canvas";
 import { DownRightIcon } from "../atoms/Icons";

@@ -287,6 +287,29 @@ export const EXPERIENCES = [
   },
 ];
 
+export const COMPANIES = [
+  {
+    name: "Siemens",
+    logo: "/assets/images/companies/siemens.png",
+  },
+  {
+    name: "Hamad Medical Corporation",
+    logo: "/assets/images/companies/hmc.png",
+  },
+  {
+    name: "Qatar University",
+    logo: "/assets/images/companies/qu.png",
+  },
+  {
+    name: "Makira Beauty",
+    logo: "/assets/images/companies/makira.png",
+  },
+  {
+    name: "S3Lab",
+    logo: "/assets/images/companies/s3lab.png",
+  },
+];
+
 export const PROJECTS_DESCRIPTION =
   "Proof that late nights, too much coffee, and just enough passion can in fact, produce working code.";
 
@@ -301,7 +324,7 @@ export const PROJECTS = {
       tag1: "Frontend",
       tag2: "LLMs",
       backgroundImage: "/assets/images/backgrounds/bg1.jpg",
-      video: "",
+      video: "/assets/videos/siemensvideo.mp4",
       visitLink: "https://s3lab.net",
     },
     {
@@ -313,7 +336,7 @@ export const PROJECTS = {
       tag1: "Mobile Dev.",
       tag2: "Hackathon",
       backgroundImage: "/assets/images/backgrounds/bg2.jpg",
-      video: "",
+      video: "/assets/videos/siemensvideo.mp4",
       visitLink: "https://youtu.be/NW1u85gMUBk",
     },
     {
@@ -325,7 +348,7 @@ export const PROJECTS = {
       tag1: "Fullstack Dev.",
       tag2: "Design",
       backgroundImage: "/assets/images/backgrounds/bg3.jpg",
-      video: "",
+      video: "/assets/videos/siemensvideo.mp4",
       visitLink: "https://unitrack-eight.vercel.app",
     },
     {
@@ -337,7 +360,7 @@ export const PROJECTS = {
       tag1: "UI/UX Design",
       tag2: "Wireframing",
       backgroundImage: "/assets/images/backgrounds/bg4.jpg",
-      video: "",
+      video: "/assets/videos/siemensvideo.mp4",
       visitLink: "https://makira.me/",
     },
     {
@@ -349,7 +372,7 @@ export const PROJECTS = {
       tag1: "Analytics",
       tag2: "PowerBI",
       backgroundImage: "/assets/images/backgrounds/bg5.jpg",
-      video: "",
+      video: "/assets/videos/siemensvideo.mp4",
       visitLink:
         "https://www.linkedin.com/posts/siemens_siemens-qatar-was-the-perfect-launchpad-activity-7268851488976773121-PX3c?utm_source=share&utm_medium=member_desktop",
     },

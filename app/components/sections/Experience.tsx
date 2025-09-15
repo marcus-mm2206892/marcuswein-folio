@@ -3,7 +3,7 @@
 import React from "react";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { EXPERIENCES, EXPERIENCES_DESCRIPTION } from "@/app/config/constants";
+import { EXPERIENCES, EXPERIENCES_DESCRIPTION } from "@/app/config/data";
 import ExperienceCard from "../atoms/ExperienceCard";
 import SectionHeader from "../molecules/SectionHeader";
 import {
@@ -16,7 +16,6 @@ import {
   TeamIcon,
   WorkIcon,
 } from "../atoms/Icons";
-import Timeline from "../atoms/Timeline";
 
 export default function Experience() {
   const container = useRef<HTMLDivElement>(null);

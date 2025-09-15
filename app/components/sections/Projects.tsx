@@ -1,4 +1,4 @@
-import { PROJECTS, PROJECTS_DESCRIPTION } from "@/app/config/constants";
+import { PROJECTS, PROJECTS_DESCRIPTION } from "@/app/config/data";
 import { BugIcon, CodeIcon, CoffeeIcon, SpidermanIcon } from "../atoms/Icons";
 import SectionHeader from "../molecules/SectionHeader";
 import ProjectCard from "../atoms/ProjectCard";

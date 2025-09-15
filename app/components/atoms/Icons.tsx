@@ -92,6 +92,48 @@ export const DownRightIcon: React.FC<IconProps> = ({ className = "" }) => (
   </svg>
 );
 
+export const LeftArrowIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 20,
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M15 18L9 12L15 6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const RightArrowIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 20,
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M9 18L15 12L9 6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export const BatmanIcon: React.FC<IconProps> = ({
   className = "",
   size = 18,
@@ -886,6 +928,19 @@ export const TeamIcon: React.FC<IconProps> = ({
   <Image
     src="/assets/images/icons/section_header_icons/team.svg"
     alt="Team"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const GundamIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 256,
+}) => (
+  <Image
+    src="/assets/images/icons/gundamicon.png"
+    alt="Gundam"
     width={size}
     height={size}
     className={className}

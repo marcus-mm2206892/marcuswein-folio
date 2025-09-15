@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { EXPERIENCES } from "../../config/constants";
+import { EXPERIENCES } from "../../config/data";
 import {
   motion,
   MotionValue,
