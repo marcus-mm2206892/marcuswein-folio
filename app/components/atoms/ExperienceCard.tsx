@@ -17,6 +17,7 @@ interface ExperienceCardProps {
   role: string;
   description: Array<string>;
   skills: Array<string>;
+  src: string;
   logo: string;
   date: string;
   location: string;
@@ -33,6 +34,7 @@ export default function ExperienceCard({
   role,
   description,
   skills,
+  src,
   logo,
   date,
   location,
@@ -208,7 +210,7 @@ export default function ExperienceCard({
         </div>
 
         {/* Content Section */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Left: Description */}
             <div className="space-y-4 sm:space-y-6">
@@ -254,70 +256,82 @@ export default function ExperienceCard({
               </div>
             </div>
 
-            {/* Right: Image Placeholder - Hidden on small screens, shown on large screens */}
+            {/* Right: Image or Placeholder - Hidden on small screens, shown on large screens */}
             <div className="relative hidden lg:block">
-              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 flex items-center justify-center group/visual">
-                {/* Animated geometric shapes */}
-                <div className="relative w-32 h-32">
-                  <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-white/30"
-                    animate={{
-                      rotate: 360,
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                      duration: 8,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                  <motion.div
-                    className="absolute inset-4 rounded-full border border-white/20"
-                    animate={{
-                      rotate: -360,
-                      scale: [1, 0.9, 1],
-                    }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                  <motion.div
-                    className="absolute inset-8 rounded-full bg-white/10"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
+              {src ? (
+                <div className="h-auto w-full rounded-2xl overflow-hidden border border-white/20 group/visual">
+                  <Image
+                    src={src}
+                    alt={`${title} experience`}
+                    width={400}
+                    height={320}
+                    className="w-full h-80 object-cover rounded-2xl transition-transform duration-500 group-hover/visual:scale-105"
                   />
                 </div>
+              ) : (
+                <div className="h-full w-full rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 flex items-center justify-center group/visual">
+                  {/* Animated geometric shapes */}
+                  <div className="relative w-32 h-32">
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-white/30"
+                      animate={{
+                        rotate: 360,
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    <motion.div
+                      className="absolute inset-4 rounded-full border border-white/20"
+                      animate={{
+                        rotate: -360,
+                        scale: [1, 0.9, 1],
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    <motion.div
+                      className="absolute inset-8 rounded-full bg-white/10"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.6, 0.3],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </div>
 
-                {/* Floating particles */}
-                {[...Array(6)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-white/40 rounded-full"
-                    style={{
-                      left: `${20 + i * 15}%`,
-                      top: `${30 + i * 10}%`,
-                    }}
-                    animate={{
-                      y: [-10, 10, -10],
-                      opacity: [0.3, 0.8, 0.3],
-                    }}
-                    transition={{
-                      duration: 3 + i * 0.5,
-                      repeat: Infinity,
-                      delay: i * 0.3,
-                    }}
-                  />
-                ))}
-              </div>
+                  {/* Floating particles */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-1 h-1 bg-white/40 rounded-full"
+                      style={{
+                        left: `${20 + i * 15}%`,
+                        top: `${30 + i * 10}%`,
+                      }}
+                      animate={{
+                        y: [-10, 10, -10],
+                        opacity: [0.3, 0.8, 0.3],
+                      }}
+                      transition={{
+                        duration: 3 + i * 0.5,
+                        repeat: Infinity,
+                        delay: i * 0.3,
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

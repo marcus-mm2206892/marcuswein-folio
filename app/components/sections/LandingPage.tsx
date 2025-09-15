@@ -115,7 +115,7 @@ export default function LandingPage() {
         </div>
         <div className="flex flex-col gap-0">
           <span className="text-gray-2 font-mono text-right text-xs md:text-base">
-            AVAILABLE FOR WORK
+            {LANDING_PAGE.subInfoTitle.toUpperCase()}
           </span>
           <span className="text-gray-3 font-heading text-right text-3xl md:text-6xl font-bold">
             {LANDING_PAGE.subInfoDescription.toUpperCase()}

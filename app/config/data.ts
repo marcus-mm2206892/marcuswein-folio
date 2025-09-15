@@ -119,8 +119,8 @@ export const LANDING_PAGE = {
     y: "51.5295° E",
   },
   landingLocation: "Doha, Qatar",
-  subInfoTitle: "Available for work",
-  subInfoDescription: `SEPT '26`,
+  subInfoTitle: "GRADUATING",
+  subInfoDescription: `MAY '26`,
   popupTexts: {
     frontendDev: {
       label: "Frontend Dev.",
@@ -163,7 +163,7 @@ To me, building, whether digital or physical, isn't just what I do, it's who I a
 };
 
 export const EXPERIENCES_DESCRIPTION =
-  "Real-world XP in code, teamwork, and the delicate art of surviving deadlines.";
+  "Real-world XP in code, teamwork, and the delicate art of surviving deadlines. Collecting experiences like infinity stones.";
 
 export const EXPERIENCES = [
   {
@@ -178,41 +178,17 @@ export const EXPERIENCES = [
     skills: [
       "Power BI",
       "Python",
+      "Regression",
       "Data Analytics",
-      "RFID",
-      "IoT",
-      "Cybersecurity",
+      "Tendering Process",
+      "Business Management",
     ],
-    src: "/assets/images/backgrounds/bg1.jpg",
+    src: "/assets/images/experiences/siemens.jpg",
     logo: "/assets/images/companies/siemens.png",
     date: "Jun 2024 – Jul 2024",
     location: "Doha, Qatar",
     link: "https://www.siemens.com",
     color: "#585847", // start (medium-dark)
-  },
-  {
-    title: "Hamad Medical Corporation",
-    role: "AI/ML Research Intern",
-    description: [
-      "Applied deep learning techniques in surgical healthcare research for medical image analysis",
-      "Explored CNNs, vision transformers, and pretrained architectures for surgical AI models",
-      "Engaged in scientific writing, secondary research, and evaluation of model performance",
-      "Authored a literature review on Vision-Language Models in surgery",
-    ],
-    skills: [
-      "Deep Learning",
-      "CNNs",
-      "Vision Transformers",
-      "PyTorch",
-      "Medical AI",
-      "Research",
-    ],
-    src: "/assets/images/backgrounds/bg2.jpg",
-    logo: "/assets/images/companies/hmc.png",
-    date: "Mar 2025 – Present",
-    location: "Doha, Qatar",
-    link: "https://www.hamad.qa",
-    color: "#4E4E3F", // darker
   },
   {
     title: "Qatar University",
@@ -224,19 +200,20 @@ export const EXPERIENCES = [
       "Prepared groundwork for TensorFlow Lite integration on mobile devices",
     ],
     skills: [
-      "CNN",
-      "EfficientNet",
+      "Deep Learning",
+      "CNNs",
       "OpenCV",
       "Flutter",
-      "TensorFlow Lite",
+      "PyTorch",
+      "Dataset Creation",
       "Computer Vision",
     ],
-    src: "/assets/images/backgrounds/bg5.jpg",
+    src: "/assets/images/experiences/srip.jpg",
     logo: "/assets/images/companies/qu.png",
     date: "May 2025 – Jul 2025",
     location: "Doha, Qatar",
     link: "https://www.qu.edu.qa",
-    color: "#3F3F32", // darker
+    color: "#4E4E3F", // darker
   },
   {
     title: "Makira Beauty",
@@ -253,32 +230,56 @@ export const EXPERIENCES = [
       "Wireframing",
       "User Research",
       "Stakeholder Management",
-      "Mobile Design",
+      "Mobile App Design",
     ],
-    src: "/assets/images/backgrounds/bg4.jpg",
+    src: "/assets/images/experiences/makira.jpg",
     logo: "/assets/images/companies/makira.png",
     date: "Jun 2025 – Aug 2025",
     location: "Doha, Qatar",
     link: "https://www.makira-beauty.com",
-    color: "#333328", // even darker
+    color: "#3F3F32", // even darker
+  },
+  {
+    title: "Hamad Medical Corporation",
+    role: "AI/ML Research Intern",
+    description: [
+      "Applying deep learning techniques in surgical healthcare research for medical image analysis",
+      "Exploring CNNs, vision transformers, and pretrained architectures for surgical AI models",
+      "Engaging in scientific writing, secondary research, and evaluation of model performance",
+      "Currently leading a literature review on Vision-Language Models in surgery",
+    ],
+    skills: [
+      "Deep Learning",
+      "CNNs",
+      "Vision-Language Models",
+      "Literature Reviews",
+      "PyTorch",
+      "Research",
+    ],
+    src: "/assets/images/experiences/hamad.png",
+    logo: "/assets/images/companies/hmc.png",
+    date: "Mar 2025 – Present",
+    location: "Doha, Qatar",
+    link: "https://www.hamad.qa",
+    color: "#333328", // darker
   },
   {
     title: "S3Lab",
     role: "Frontend Development Intern",
     description: [
-      "Built the frontend of a carbon emissions tracking platform for companies",
-      "Connected APIs to display and process sustainability data through the UI",
-      "Collaborated with backend and research teams to integrate AI-powered chat and data visualization features",
+      "Building the frontend of a carbon emissions tracking platform for companies",
+      "Connecting backend APIs to display and process sustainability data through the user interface",
+      "Collaborating with research teams to integrate AI-powered chat and data visualization features",
     ],
     skills: [
-      "React",
+      "Frontend Development",
       "Next.js",
       "API Integration",
       "Data Visualization",
-      "AI Chat",
-      "Sustainability",
+      "AI Chatbots",
+      "RAGs",
     ],
-    src: "/assets/images/backgrounds/bg3.jpg",
+    src: "/assets/images/experiences/s3lab2.png",
     logo: "/assets/images/companies/s3lab.png",
     date: "Aug 2025 – Present",
     location: "Doha, Qatar",
@@ -324,7 +325,7 @@ export const PROJECTS = {
       tag1: "Frontend",
       tag2: "LLMs",
       backgroundImage: "/assets/images/backgrounds/bg1.jpg",
-      video: "/assets/videos/siemensvideo.mp4",
+      video: "/assets/videos/caquvideo.mp4",
       visitLink: "https://s3lab.net",
     },
     {
@@ -336,7 +337,7 @@ export const PROJECTS = {
       tag1: "Mobile Dev.",
       tag2: "Hackathon",
       backgroundImage: "/assets/images/backgrounds/bg2.jpg",
-      video: "/assets/videos/siemensvideo.mp4",
+      video: "/assets/videos/campconnectvideo.mp4",
       visitLink: "https://youtu.be/NW1u85gMUBk",
     },
     {
@@ -348,7 +349,7 @@ export const PROJECTS = {
       tag1: "Fullstack Dev.",
       tag2: "Design",
       backgroundImage: "/assets/images/backgrounds/bg3.jpg",
-      video: "/assets/videos/siemensvideo.mp4",
+      video: "/assets/videos/unitrackvideo.mp4",
       visitLink: "https://unitrack-eight.vercel.app",
     },
     {
@@ -360,7 +361,7 @@ export const PROJECTS = {
       tag1: "UI/UX Design",
       tag2: "Wireframing",
       backgroundImage: "/assets/images/backgrounds/bg4.jpg",
-      video: "/assets/videos/siemensvideo.mp4",
+      video: "/assets/videos/makiravideo.mp4",
       visitLink: "https://makira.me/",
     },
     {
