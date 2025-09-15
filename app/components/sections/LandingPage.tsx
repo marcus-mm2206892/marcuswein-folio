@@ -3,7 +3,7 @@
 import { LANDING_PAGE } from "@/app/config/data";
 import React, { useEffect, useState } from "react";
 import Canvas from "../molecules/Canvas";
-import { DownRightIcon } from "../atoms/Icons";
+import { DownRightIcon, UpRightArrowIcon } from "../atoms/Icons";
 
 export default function LandingPage() {
   const [opacity, setOpacity] = useState(1);
@@ -82,8 +82,13 @@ export default function LandingPage() {
               </p>
 
               <div className="overflow-hidden">
-                <button className="group relative flex h-fit w-fit items-center justify-center overflow-hidden rounded-full bg-accent-dark-green font-bold uppercase tracking-wide text-white px-6 py-4 text-lg">
-                  <span className="relative">VIEW MY CV ↗</span>
+                <button
+                  className="group relative flex h-fit w-fit items-center justify-center overflow-hidden rounded-full cursor-pointer bg-accent-dark-green font-bold uppercase tracking-wide text-white px-6 py-4 text-lg"
+                  onClick={() => window.open(LANDING_PAGE.cvLink, "_blank")}
+                >
+                  <span className="relative text-off-white flex items-center gap-2">
+                    VIEW MY CV <UpRightArrowIcon className="w-4 h-4" />
+                  </span>
                 </button>
               </div>
             </div>

@@ -108,6 +108,8 @@ export const CONTACT_DETAILS = {
 };
 
 export const LANDING_PAGE = {
+  cvLink:
+    "https://drive.google.com/file/d/1DJFV8jf6QmVrhHggP6JzPxYhkv1EFvha/view?usp=drive_link",
   headerTitle: {
     pt1: "Software Dev.",
     pt2: "Research",

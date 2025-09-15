@@ -134,6 +134,27 @@ export const RightArrowIcon: React.FC<IconProps> = ({
   </svg>
 );
 
+export const UpRightArrowIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 20,
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M7 17L17 7M17 7H7M17 7V17"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export const BatmanIcon: React.FC<IconProps> = ({
   className = "",
   size = 18,
