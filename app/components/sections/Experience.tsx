@@ -26,7 +26,11 @@ export default function Experience() {
   });
 
   return (
-    <div ref={container} className="min-h-screen relative gap-4" id="journey">
+    <div
+      ref={container}
+      className="min-h-screen relative gap-4 flex flex-col items-center"
+      id="journey"
+    >
       <SectionHeader
         title={{
           line1: "JOURNEY",
@@ -42,21 +46,23 @@ export default function Experience() {
           <TeamIcon size={20} />,
         ]}
       />
-      <LogoLoop
-        logos={EXPERIENCES.map((experience) => ({
-          src: experience.logo,
-          alt: experience.title,
-        }))}
-        speed={20}
-        direction="left"
-        width="100%"
-        logoHeight={60}
-        gap={100}
-        pauseOnHover={true}
-        fadeOut={true}
-        fadeOutColor="bg-black"
-        scaleOnHover={true}
-      />
+      <div className="w-8/10 pt-12">
+        <LogoLoop
+          logos={EXPERIENCES.map((experience) => ({
+            src: experience.logo,
+            alt: experience.title,
+          }))}
+          speed={40}
+          direction="left"
+          width="100%"
+          logoHeight={60}
+          gap={100}
+          pauseOnHover={true}
+          fadeOut={true}
+          fadeOutColor="#0e0e0c"
+          scaleOnHover={true}
+        />
+      </div>
       {EXPERIENCES.map((experience, index) => {
         const targetScale = 1 - (EXPERIENCES.length - index) * 0.05;
         return (
