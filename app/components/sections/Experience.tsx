@@ -16,6 +16,7 @@ import {
   TeamIcon,
   WorkIcon,
 } from "../atoms/Icons";
+import LogoLoop from "../atoms/LogoLoop";
 
 export default function Experience() {
   const container = useRef<HTMLDivElement>(null);
@@ -25,7 +26,7 @@ export default function Experience() {
   });
 
   return (
-    <div ref={container} className="min-h-screen relative" id="journey">
+    <div ref={container} className="min-h-screen relative gap-4" id="journey">
       <SectionHeader
         title={{
           line1: "JOURNEY",
@@ -40,6 +41,21 @@ export default function Experience() {
           <WorkIcon size={20} />,
           <TeamIcon size={20} />,
         ]}
+      />
+      <LogoLoop
+        logos={EXPERIENCES.map((experience) => ({
+          src: experience.logo,
+          alt: experience.title,
+        }))}
+        speed={20}
+        direction="left"
+        width="100%"
+        logoHeight={60}
+        gap={100}
+        pauseOnHover={true}
+        fadeOut={true}
+        fadeOutColor="bg-black"
+        scaleOnHover={true}
       />
       {EXPERIENCES.map((experience, index) => {
         const targetScale = 1 - (EXPERIENCES.length - index) * 0.05;
