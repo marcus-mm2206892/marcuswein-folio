@@ -14,6 +14,7 @@ import {
   YouTubeIcon,
   UpArrowIcon,
 } from "@/app/components/atoms/Icons";
+import ScrollVelocity from "../atoms/ScrollVelocity";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");

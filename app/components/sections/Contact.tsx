@@ -5,6 +5,7 @@ import Name from "./contact-subsections/Name";
 import Email from "./contact-subsections/Email";
 import Message from "./contact-subsections/Message";
 import Thanks from "./contact-subsections/Thanks";
+import ScrollVelocity from "../atoms/ScrollVelocity";
 
 type FormData = {
   name: string;

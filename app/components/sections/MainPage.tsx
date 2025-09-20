@@ -6,6 +6,7 @@ import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import Experience from "./Experience";
 import Projects from "./Projects";
+import ScrollVelocity from "../atoms/ScrollVelocity";
 
 export default function MainPage() {
   const containerRef = useRef<HTMLDivElement>(null);
