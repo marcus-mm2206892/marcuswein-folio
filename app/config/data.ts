@@ -248,13 +248,12 @@ export const EXPERIENCES = [
       "Applying deep learning techniques in surgical healthcare research for medical image analysis",
       "Exploring CNNs, vision transformers, and pretrained architectures for surgical AI models",
       "Engaging in scientific writing, secondary research, and evaluation of model performance",
-      "Currently leading a literature review on Vision-Language Models in surgery",
+      "Currently leading a literature review on Vision-Language Models applications in surgery",
     ],
     skills: [
+      "Vision-Language Models",
       "Deep Learning",
       "CNNs",
-      "Vision-Language Models",
-      "Literature Reviews",
       "PyTorch",
       "Research",
     ],
@@ -270,6 +269,7 @@ export const EXPERIENCES = [
     role: "Frontend Development Intern",
     description: [
       "Building the frontend of a carbon emissions tracking platform for companies",
+      "Resolving development tickets through Redmine and collaborating with senior devs and QA through Git",
       "Connecting backend APIs to display and process sustainability data through the user interface",
       "Collaborating with research teams to integrate AI-powered chat and data visualization features",
     ],

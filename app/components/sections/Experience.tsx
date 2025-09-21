@@ -26,11 +26,7 @@ export default function Experience() {
   });
 
   return (
-    <div
-      ref={container}
-      className="min-h-screen relative gap-4 flex flex-col items-center"
-      id="journey"
-    >
+    <div ref={container} className="min-h-screen relative gap-4" id="journey">
       <SectionHeader
         title={{
           line1: "JOURNEY",
@@ -46,7 +42,8 @@ export default function Experience() {
           <TeamIcon size={20} />,
         ]}
       />
-      <div className="w-8/10 pt-12">
+
+      <div className="w-8/10 pt-12 flex flex-col items-center">
         <LogoLoop
           logos={EXPERIENCES.map((experience) => ({
             src: experience.logo,

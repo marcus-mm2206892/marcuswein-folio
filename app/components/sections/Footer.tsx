@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {
-  SOCIAL_LINKS,
-  CONTACT_DETAILS,
-  SITE_CONFIG,
-  NAVIGATION,
-} from "@/app/config/data";
+import { SOCIAL_LINKS, CONTACT_DETAILS, NAVIGATION } from "@/app/config/data";
 import {
   GithubIcon,
   LinkedInIcon,
@@ -14,7 +9,6 @@ import {
   YouTubeIcon,
   UpArrowIcon,
 } from "@/app/components/atoms/Icons";
-import ScrollVelocity from "../atoms/ScrollVelocity";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");

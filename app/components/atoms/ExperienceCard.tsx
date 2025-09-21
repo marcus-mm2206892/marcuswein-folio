@@ -63,7 +63,7 @@ export default function ExperienceCard({
       className="cardContainer h-screen flex items-center justify-center sticky top-0"
     >
       <motion.div
-        className="card group relative min-h-[550px] w-full max-w-[1100px] mx-auto rounded-3xl overflow-hidden border border-transparent hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-[border,box-shadow] duration-500"
+        className="card group relative min-h-[580px] sm:min-h-[600px] w-[90%] lg:w-[100%] min-w-[320px] max-w-[1100px] rounded-3xl overflow-hidden border border-transparent hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-[border,box-shadow] duration-500"
         style={{
           scale,
           backgroundColor: color,
@@ -176,9 +176,9 @@ export default function ExperienceCard({
         </div>
 
         {/* Header Section */}
-        <div className="relative z-10 p-4 sm:p-6 lg:p-8 pb-4">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-8 pb-2">
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Company Logo */}
               <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 flex-shrink-0">
                 <Image
@@ -186,7 +186,7 @@ export default function ExperienceCard({
                   alt={`${title} logo`}
                   width={40}
                   height={40}
-                  className="object-contain w-6 h-6 sm:w-10 sm:h-10"
+                  className="object-contain w-8 h-8 sm:w-10 sm:h-10"
                 />
               </div>
               <div>
@@ -218,18 +218,15 @@ export default function ExperienceCard({
             <div className="space-y-4 sm:space-y-6">
               <div className="space-y-3 sm:space-y-4">
                 {description.map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
                     className="flex items-start gap-2 sm:gap-3 group/item"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
                   >
-                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white/60 mt-1.5 sm:mt-2 flex-shrink-0 group-hover/item:bg-white transition-colors duration-200" />
-                    <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white/60 mt-1.5 sm:mt-2 flex-shrink-0 " />
+                    <p className="text-white/90 text-xs sm:text-base leading-relaxed">
                       {item}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -240,19 +237,13 @@ export default function ExperienceCard({
                 </h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {skills.map((skill, index) => (
-                    <motion.div
-                      key={skill}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Tag
-                        color="bg-accent-green"
-                        label={skill}
-                        icon={SimpleIcon}
-                        size="medium"
-                      />
-                    </motion.div>
+                    <Tag
+                      color="bg-accent-green"
+                      label={skill}
+                      icon={SimpleIcon}
+                      textColor="text-off-white"
+                      size="medium"
+                    />
                   ))}
                 </div>
               </div>

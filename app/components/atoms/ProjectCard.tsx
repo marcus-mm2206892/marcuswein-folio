@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="flex flex-col gap-4 w-full h-full">
-      <div className="w-full h-auto max-h-[75vh] aspect-square relative">
+      <div className="w-full h-auto max-h-[70vh] aspect-square relative">
         <Image
           src={project.backgroundImage}
           alt={project.title}
@@ -58,7 +58,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {project.video && (
           <video
             ref={videoRef}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 object-cover rounded-lg shadow-2xl"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 aspect-[4/3] object-cover rounded-lg shadow-2xl"
             muted
             loop
             playsInline

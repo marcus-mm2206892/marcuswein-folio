@@ -11,6 +11,7 @@ interface TagProps {
   icon: LucideIcon | React.FC<IconProps>;
   size?: "small" | "medium" | "large";
   color?: string;
+  textColor?: string;
 }
 
 export default function Tag({
@@ -18,6 +19,7 @@ export default function Tag({
   icon: Icon,
   size = "medium",
   color,
+  textColor,
 }: TagProps) {
   // Size-based styling configurations
   const sizeConfig = {
@@ -40,15 +42,18 @@ export default function Tag({
 
   const config = sizeConfig[size];
   const backgroundColor = color || "bg-accent-green-light";
-  const textColor = color ? "text-white" : "text-off-white";
-  const iconColor = color ? "text-white" : "text-off-white";
+  const iconColor = textColor || (color ? "text-white" : "text-off-white");
 
   return (
     <div
       className={`flex items-center ${config.container} rounded-full ${backgroundColor} shadow-lg whitespace-nowrap`}
     >
       <Icon className={`${config.icon} ${iconColor}`} />
-      <span className={`${config.text} font-medium ${textColor}`}>{label}</span>
+      <span
+        className={`${config.text} font-medium ${textColor ? textColor : "text-off-white"}`}
+      >
+        {label}
+      </span>
     </div>
   );
 }
