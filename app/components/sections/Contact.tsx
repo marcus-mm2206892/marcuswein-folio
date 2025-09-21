@@ -9,6 +9,7 @@ import { GithubIcon, LinkedInIcon, InstagramIcon } from "../atoms/Icons";
 import { CONTACT_DETAILS, CONTACT_FORM, SOCIAL_LINKS } from "../../config/data";
 import SectionTitle from "../atoms/SectionTitle";
 import { motion } from "framer-motion";
+import Magnetic from "../animations/Magnetic";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -247,35 +248,40 @@ export default function Contact() {
                 {CONTACT_FORM.description}
               </p>
               <div className="flex items-center justify-start gap-6">
-                <a
-                  href={SOCIAL_LINKS.linkedin.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-accent-green-light transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon size={18} className="brightness-0 invert" />
-                </a>
+                <Magnetic>
+                  <a
+                    href={SOCIAL_LINKS.linkedin.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-accent-green-light transition-colors duration-200"
+                    aria-label="LinkedIn"
+                  >
+                    <LinkedInIcon size={18} className="brightness-0 invert" />
+                  </a>
+                </Magnetic>
 
-                <a
-                  href={SOCIAL_LINKS.github.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-accent-green-light transition-colors duration-200"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon size={18} className="brightness-0 invert" />
-                </a>
-
-                <a
-                  href={SOCIAL_LINKS.instagram.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-accent-green-light transition-colors duration-200"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon size={18} className="brightness-0 invert" />
-                </a>
+                <Magnetic>
+                  <a
+                    href={SOCIAL_LINKS.github.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-accent-green-light transition-colors duration-200"
+                    aria-label="GitHub"
+                  >
+                    <GithubIcon size={18} className="brightness-0 invert" />
+                  </a>
+                </Magnetic>
+                <Magnetic>
+                  <a
+                    href={SOCIAL_LINKS.instagram.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-accent-green-light transition-colors duration-200"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon size={18} className="brightness-0 invert" />
+                  </a>
+                </Magnetic>
               </div>
             </div>
 

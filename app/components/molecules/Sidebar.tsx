@@ -8,6 +8,7 @@ import {
   LinkedInIcon,
   InstagramIcon,
 } from "@/app/components/atoms/Icons";
+import AnimatedPill from "@/app/components/atoms/AnimatedPill";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -112,15 +113,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               {Object.values(SOCIAL_LINKS)
                 .filter((item) => item.label !== "YouTube")
                 .map((item) => (
-                  <a
+                  <AnimatedPill
+                    key={item.key}
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2 px-3 border border-off-white rounded-full text-off-white text-sm"
-                    key={item.key}
+                    variant="stroke"
+                    className="py-2 px-2 border border-off-white rounded-full text-xs"
                   >
-                    <span>{item.label.toUpperCase()}</span>
-                  </a>
+                    {item.label.toUpperCase()}
+                  </AnimatedPill>
                 ))}
             </div>
           </div>

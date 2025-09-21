@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { LANDING_PAGE, NAVIGATION } from "@/app/config/data";
 import Magnetic from "../animations/Magnetic";
+import AnimatedLink from "../atoms/AnimatedLink";
 
 export default function NavBar() {
   return (
@@ -53,7 +54,7 @@ export default function NavBar() {
             {Object.values(NAVIGATION)
               .filter((item) => item.id !== "home")
               .map((item) => (
-                <a
+                <AnimatedLink
                   key={item.id}
                   href={item.href}
                   className="text-gray-1 rounded-md text-md font-body font-medium cursor-pointer"
@@ -74,7 +75,7 @@ export default function NavBar() {
                   }}
                 >
                   {item.label}
-                </a>
+                </AnimatedLink>
               ))}
           </nav>
         </div>

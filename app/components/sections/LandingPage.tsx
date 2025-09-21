@@ -4,6 +4,7 @@ import { LANDING_PAGE } from "@/app/config/data";
 import React, { useEffect, useState } from "react";
 import Canvas from "../molecules/Canvas";
 import { DownRightIcon, UpRightArrowIcon } from "../atoms/Icons";
+import AnimatedPill from "../atoms/AnimatedPill";
 
 export default function LandingPage() {
   const [opacity, setOpacity] = useState(1);
@@ -82,14 +83,15 @@ export default function LandingPage() {
               </p>
 
               <div className="overflow-hidden">
-                <button
-                  className="group relative flex h-fit w-fit items-center justify-center overflow-hidden rounded-full cursor-pointer bg-accent-dark-green font-bold uppercase tracking-wide text-white px-6 py-4 text-lg"
+                <AnimatedPill
                   onClick={() => window.open(LANDING_PAGE.cvLink, "_blank")}
+                  variant="stroke"
+                  className="group relative flex h-fit w-fit items-center justify-center overflow-hidden rounded-full cursor-pointer !bg-accent-dark-green !border-accent-dark-green font-bold uppercase tracking-wide px-6 py-4 text-lg"
                 >
-                  <span className="relative text-off-white flex items-center gap-2">
+                  <span className="relative flex items-center gap-2">
                     VIEW MY CV <UpRightArrowIcon className="w-4 h-4" />
                   </span>
-                </button>
+                </AnimatedPill>
               </div>
             </div>
           </div>
@@ -131,7 +133,7 @@ export default function LandingPage() {
       {/* Canvas positioned absolutely above all content */}
       <div className="absolute inset-0 pointer-events-none z-1">
         <div className="relative w-full h-full">
-          <div className="absolute top-1/3 md:top-1/2 mt-12 md:mt-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-86 md:w-xl h-80 md:h-96 block">
+          <div className="absolute top-1/3 md:top-1/2 mt-12 md:mt-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-86 md:w-xl h-80 md:h-120 block">
             <Canvas />
           </div>
         </div>

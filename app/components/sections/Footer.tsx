@@ -9,6 +9,7 @@ import {
   YouTubeIcon,
   UpArrowIcon,
 } from "@/app/components/atoms/Icons";
+import AnimatedLink from "@/app/components/atoms/AnimatedLink";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
@@ -63,12 +64,27 @@ export default function Footer() {
             <ul className="list-none p-0">
               {Object.values(NAVIGATION).map((item) => (
                 <li key={item.id} className="flex items-center h-6 mb-1.5">
-                  <a
+                  <AnimatedLink
                     href={item.href}
                     className="text-gray-1 text-sm hover:text-accent-green transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        const elementPosition =
+                          element.getBoundingClientRect().top;
+                        const offsetPosition =
+                          elementPosition + window.pageYOffset - 100;
+
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
                   >
                     {item.label}
-                  </a>
+                  </AnimatedLink>
                 </li>
               ))}
             </ul>
@@ -88,14 +104,14 @@ export default function Footer() {
                     {platform === "instagram" && <InstagramIcon size={18} />}
                     {platform === "youtube" && <YouTubeIcon size={18} />}
                   </div>
-                  <a
+                  <AnimatedLink
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-1 text-sm hover:text-accent-green transition-colors"
                   >
                     {social.label}
-                  </a>
+                  </AnimatedLink>
                 </li>
               ))}
             </ul>
@@ -109,20 +125,20 @@ export default function Footer() {
           </h3>
           <ul className="list-none p-0">
             <li className="flex items-center h-6 mb-1.5">
-              <a
+              <AnimatedLink
                 href={`mailto:${CONTACT_DETAILS.email}`}
                 className="text-gray-1 text-sm"
               >
                 {CONTACT_DETAILS.email}
-              </a>
+              </AnimatedLink>
             </li>
             <li className="flex items-center h-6 mb-1.5">
-              <a
+              <AnimatedLink
                 href={`tel:${CONTACT_DETAILS.number}`}
                 className="text-gray-1 text-sm"
               >
                 {CONTACT_DETAILS.number}
-              </a>
+              </AnimatedLink>
             </li>
           </ul>
         </div>
@@ -146,7 +162,7 @@ export default function Footer() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className="hidden md:flex absolute bottom-[2vh] right-[2%] w-[7vh] h-[7vh] m-[2vh] rounded-full bg-accent-warm-gray justify-center items-center cursor-pointer hover:bg-accent-warm-gray-light transition-colors"
+        className="hidden md:flex absolute bottom-[2vh] right-[2%] w-[7vh] h-[7vh] m-[2vh] rounded-full bg-accent-warm-gray justify-center items-center cursor-pointer"
         aria-label="Scroll to top"
       >
         <UpArrowIcon className="text-gray-3" />

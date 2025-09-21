@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -16,6 +16,8 @@ export default function Canvas() {
   const mouseY = useMotionValue(0);
   const rotationX = useTransform(mouseY, [-1.2, 1.2], [0.7, -0.7]);
   const rotationY = useTransform(mouseX, [-1, 1], [-0.7, 0.7]);
+  const [isModelLoaded, setIsModelLoaded] = useState(false);
+  const modelScale = useMotionValue(0);
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -24,6 +26,7 @@ export default function Canvas() {
     const scene = new THREE.Scene();
 
     let model: THREE.Object3D | undefined;
+    let modelScaleValue = 40; // Store the calculated scale value
     const modelContainer = new THREE.Object3D();
     scene.add(modelContainer);
 
@@ -46,10 +49,41 @@ export default function Canvas() {
       // Scale the model to fit nicely in the viewport
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 40 / maxDim; // Adjust this value to control model size
-      model.scale.setScalar(scale);
+      modelScaleValue = 32 / maxDim; // Adjust this value to control model size
 
+      // Start with scale 0 for animation
+      model.scale.setScalar(0);
       modelContainer.add(model);
+
+      // Mark model as loaded and trigger scale animation
+      setIsModelLoaded(true);
+
+      // Animate scale from 0 to 1 with bouncy effect
+      modelScale.set(0);
+      setTimeout(() => {
+        // Apply the spring animation manually
+        let startTime = Date.now();
+        const duration = 1200; // 1.2 seconds
+
+        const animateSpring = () => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Spring easing function (simplified)
+          const springEase = (t: number) => {
+            return 1 - Math.pow(1 - t, 3) * Math.cos(t * Math.PI * 2.5);
+          };
+
+          const easedProgress = springEase(progress);
+          modelScale.set(easedProgress);
+
+          if (progress < 1) {
+            requestAnimationFrame(animateSpring);
+          }
+        };
+
+        requestAnimationFrame(animateSpring);
+      }, 100); // Small delay to ensure model is added to scene
     });
 
     // Ambient Light
@@ -170,6 +204,7 @@ export default function Canvas() {
     let targetRotationY = 0;
     let currentRotationX = 0;
     let currentRotationY = 0;
+    let currentScale = 0;
 
     const animate = () => {
       requestAnimationFrame(animate);
@@ -187,6 +222,15 @@ export default function Canvas() {
         // Apply smoothed rotations
         model.rotation.x = currentRotationX;
         model.rotation.y = currentRotationY;
+
+        // Handle scale animation with bouncy effect
+        const targetScale = modelScale.get();
+        const scaleLerpFactor = 0.15; // Slightly faster for scale animation
+        currentScale += (targetScale - currentScale) * scaleLerpFactor;
+
+        // Apply bouncy scale effect
+        const finalScale = modelScaleValue * currentScale;
+        model.scale.setScalar(finalScale);
       }
 
       controls.update();
@@ -205,7 +249,7 @@ export default function Canvas() {
       resizeObserver.disconnect();
       renderer.dispose();
     };
-  }, [mouseX, mouseY, rotationX, rotationY]);
+  }, [mouseX, mouseY, rotationX, rotationY, modelScale]);
 
   return (
     <div className="relative w-full h-full">
