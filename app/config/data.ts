@@ -127,7 +127,7 @@ export const CONTACT_FORM = {
       placeholder: "Tell me how I can help you",
     },
     submit: {
-      text: "SUBMIT * SUBMIT * SUBMIT * ",
+      text: "SUBMIT * YOUR * MESSAGE * ",
       spinDuration: 15,
       hoverEffect: "slowDown" as const,
     },

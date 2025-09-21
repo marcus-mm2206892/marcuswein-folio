@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import CircularText from "../atoms/CircularText";
+import ConcentricCircles from "../atoms/ConcentricCircles";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "../atoms/Icons";
 import { CONTACT_DETAILS, CONTACT_FORM, SOCIAL_LINKS } from "../../config/data";
 import SectionTitle from "../atoms/SectionTitle";
@@ -217,103 +218,7 @@ export default function Contact() {
             {/* Mysterious background visual elements */}
             <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
               {/* Concentric circles - centered */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 30,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                <div className="relative">
-                  <div className="w-80 h-80 border border-white/30 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                  <div className="w-64 h-64 border border-white/35 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                  <div className="w-48 h-48 border border-white/40 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                </div>
-              </motion.div>
-
-              {/* Floating particles - properly positioned within card bounds */}
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ top: "20%", left: "15%" }}
-                animate={{
-                  y: [-15, 15, -15],
-                  opacity: [0.4, 0.9, 0.4],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: 0,
-                }}
-              />
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ top: "25%", right: "20%" }}
-                animate={{
-                  y: [-20, 20, -20],
-                  opacity: [0.3, 0.8, 0.3],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  delay: 1,
-                }}
-              />
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ bottom: "30%", left: "25%" }}
-                animate={{
-                  y: [-12, 12, -12],
-                  opacity: [0.5, 0.7, 0.5],
-                }}
-                transition={{
-                  duration: 3.5,
-                  repeat: Infinity,
-                  delay: 2,
-                }}
-              />
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ bottom: "25%", right: "15%" }}
-                animate={{
-                  y: [-18, 18, -18],
-                  opacity: [0.4, 1, 0.4],
-                }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                  delay: 0.5,
-                }}
-              />
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ top: "60%", right: "10%" }}
-                animate={{
-                  y: [-10, 10, -10],
-                  opacity: [0.3, 0.9, 0.3],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: 1.5,
-                }}
-              />
-              <motion.div
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{ top: "70%", left: "10%" }}
-                animate={{
-                  y: [-14, 14, -14],
-                  opacity: [0.4, 0.8, 0.4],
-                }}
-                transition={{
-                  duration: 3.8,
-                  repeat: Infinity,
-                  delay: 2.2,
-                }}
-              />
+              <ConcentricCircles />
             </div>
             {/* Content positioned above background animations */}
             <div className="relative z-10">

@@ -27,7 +27,7 @@ export default function MainPage() {
         scaleX,
         borderRadius: useTransform(borderRadius, (value) => `${value}rem`),
       }}
-      className="relative mt-screen left-0 right-0 min-h-[calc(100vh*3)] bg-black text-off-white z-5 px-8 py-32 flex flex-col gap-32 origin-center"
+      className="relative mt-screen left-0 right-0 min-h-[calc(100vh*3)] bg-black text-off-white z-5 px-8 pt-32 pb-16 flex flex-col gap-32 origin-center"
     >
       <section id="about">
         <AboutMe />

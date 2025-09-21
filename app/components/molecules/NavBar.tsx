@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { LANDING_PAGE, NAVIGATION } from "@/app/config/data";
+import Magnetic from "../animations/Magnetic";
 
 export default function NavBar() {
   return (
@@ -16,23 +17,26 @@ export default function NavBar() {
         <div className="flex justify-between items-center min-h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0 flex flex-col md:flex-row items-start justify-start md:items-center md:justify-start gap-4 md:gap-12">
-            <div>
-              <a
-                href={NAVIGATION.home.href}
-                aria-label="Go to homepage"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                <img
-                  className="h-12 w-auto cursor-pointer"
-                  src="/assets/images/personal/mwlogo.png"
-                  alt="Marcus Wein Logo"
-                  draggable="false"
-                />
-              </a>
-            </div>
+            <Magnetic>
+              <div>
+                <a
+                  href={NAVIGATION.home.href}
+                  aria-label="Go to homepage"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  <img
+                    className="h-12 w-auto cursor-pointer"
+                    src="/assets/images/personal/mwlogo.png"
+                    alt="Marcus Wein Logo"
+                    draggable="false"
+                  />
+                </a>
+              </div>
+            </Magnetic>
+
             <div>
               <span className="text-sm md:text-md font-mono text-gray-3 whitespace-normal">
                 ( {LANDING_PAGE.headerTitle.pt1}

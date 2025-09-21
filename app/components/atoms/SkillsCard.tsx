@@ -59,7 +59,7 @@ const SkillsCard = forwardRef<HTMLDivElement, SkillsCardProps>(
               </div>
 
               {/* tags instead of list */}
-              <div className="mt-2 min-[466px]:mt-4 flex flex-wrap gap-2">
+              <div className="mt-2 min-[466px]:mt-4 flex flex-wrap gap-1">
                 {items.map((it, i) => (
                   <Tag key={i} label={it.label} icon={it.icon} size="medium" />
                 ))}
