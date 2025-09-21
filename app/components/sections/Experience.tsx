@@ -43,22 +43,24 @@ export default function Experience() {
         ]}
       />
 
-      <div className="w-8/10 pt-12 flex flex-col items-center">
-        <LogoLoop
-          logos={EXPERIENCES.map((experience) => ({
-            src: experience.logo,
-            alt: experience.title,
-          }))}
-          speed={40}
-          direction="left"
-          width="100%"
-          logoHeight={60}
-          gap={100}
-          pauseOnHover={true}
-          fadeOut={true}
-          fadeOutColor="#0e0e0c"
-          scaleOnHover={true}
-        />
+      <div className="w-full pt-12 flex justify-center">
+        <div className="w-[90%] max-w-[1100px]">
+          <LogoLoop
+            logos={EXPERIENCES.map((experience) => ({
+              src: experience.logo,
+              alt: experience.title,
+            }))}
+            speed={40}
+            direction="left"
+            width="100%"
+            logoHeight={60}
+            gap={100}
+            pauseOnHover={true}
+            fadeOut={true}
+            fadeOutColor="#0e0e0c"
+            scaleOnHover={true}
+          />
+        </div>
       </div>
       {EXPERIENCES.map((experience, index) => {
         const targetScale = 1 - (EXPERIENCES.length - index) * 0.05;

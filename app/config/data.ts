@@ -107,6 +107,35 @@ export const CONTACT_DETAILS = {
   number: "+974 66815630",
 };
 
+export const CONTACT_FORM = {
+  header: {
+    status: "AVAILABLE",
+    title: "Let's start a project together",
+    subtitle: "CONNECT WITH ME",
+  },
+  form: {
+    name: {
+      label: "Full Name",
+      placeholder: "Enter your full name",
+    },
+    email: {
+      label: "Email",
+      placeholder: "Enter your email",
+    },
+    message: {
+      label: "Message",
+      placeholder: "Tell me how I can help you",
+    },
+    submit: {
+      text: "SUBMIT * SUBMIT * SUBMIT * ",
+      spinDuration: 15,
+      hoverEffect: "slowDown" as const,
+    },
+  },
+  description:
+    "Got an idea? A project? Or just a meme to share? My inbox is always open, and replies are faster if you bribe me with good Spotify playlists.",
+};
+
 export const LANDING_PAGE = {
   cvLink:
     "https://drive.google.com/file/d/1DJFV8jf6QmVrhHggP6JzPxYhkv1EFvha/view?usp=drive_link",

@@ -238,6 +238,7 @@ export default function ExperienceCard({
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {skills.map((skill, index) => (
                     <Tag
+                      key={skill}
                       color="bg-accent-green"
                       label={skill}
                       icon={SimpleIcon}
