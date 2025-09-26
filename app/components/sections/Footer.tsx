@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={item.id} className="flex items-center h-6 mb-1.5">
                   <AnimatedLink
                     href={item.href}
-                    className="text-gray-1 text-sm hover:text-accent-green transition-colors"
+                    className="text-gray-1 text-sm transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
                       const element = document.querySelector(item.href);
@@ -108,7 +108,7 @@ export default function Footer() {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-1 text-sm hover:text-accent-green transition-colors"
+                    className="text-gray-1 text-sm transition-colors"
                   >
                     {social.label}
                   </AnimatedLink>

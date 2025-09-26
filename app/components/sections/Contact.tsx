@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Input } from "@heroui/input";
-import { Button } from "@heroui/button";
 import CircularText from "../atoms/CircularText";
 import ConcentricCircles from "../atoms/ConcentricCircles";
 import { GithubIcon, LinkedInIcon, InstagramIcon } from "../atoms/Icons";
-import { CONTACT_DETAILS, CONTACT_FORM, SOCIAL_LINKS } from "../../config/data";
+import { CONTACT_FORM, SOCIAL_LINKS } from "../../config/data";
 import SectionTitle from "../atoms/SectionTitle";
-import { motion } from "framer-motion";
 import Magnetic from "../animations/Magnetic";
+import { sendEmail } from "../../../lib/email";
+import { formSchema } from "../../../lib/schemas";
+import { z } from "zod";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -25,6 +25,7 @@ export default function Contact() {
   });
 
   const [submitAttempted, setSubmitAttempted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,49 +46,55 @@ export default function Contact() {
   };
 
   const validateForm = () => {
-    const newErrors = {
-      name: "",
-      email: "",
-      message: "",
-    };
+    try {
+      // Use Zod schema to validate
+      formSchema.parse(formData);
+      setErrors({ name: "", email: "", message: "" });
+      return true;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors = error.flatten().fieldErrors as {
+          name?: string[];
+          email?: string[];
+          message?: string[];
+        };
+        setErrors({
+          name: newErrors.name?.[0] ?? "",
+          email: newErrors.email?.[0] ?? "",
+          message: newErrors.message?.[0] ?? "",
+        });
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+        // Auto-clear errors after 3 seconds
+        setTimeout(() => {
+          setErrors({ name: "", email: "", message: "" });
+        }, 3000);
+      }
+      return false;
     }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
-
-    setErrors(newErrors);
-
-    // Auto-clear errors after 3 seconds
-    if (Object.values(newErrors).some((error) => error !== "")) {
-      setTimeout(() => {
-        setErrors({ name: "", email: "", message: "" });
-      }, 3000);
-    }
-
-    return !Object.values(newErrors).some((error) => error !== "");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitAttempted(true);
+    setIsSubmitting(true);
 
     if (validateForm()) {
-      // Handle form submission here
-      console.log("Form submitted:", formData);
-      // Reset form after successful submission
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({ name: "", email: "", message: "" });
-      setSubmitAttempted(false);
+      try {
+        // Use the server action
+        await sendEmail(formData);
+
+        // Reset form after successful submission
+        setFormData({ name: "", email: "", message: "" });
+        setErrors({ name: "", email: "", message: "" });
+        setSubmitAttempted(false);
+      } catch (error) {
+        console.error("Form submission error:", error);
+        // Handle error if needed
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      setIsSubmitting(false);
     }
   };
 
@@ -194,14 +201,20 @@ export default function Contact() {
                   </div>
                   <div className="flex items-center justify-center pb-4 sm:pb-0 pr-0 sm:pr-4">
                     <CircularText
-                      text={CONTACT_FORM.form.submit.text}
+                      text={
+                        isSubmitting
+                          ? "SENDING..."
+                          : CONTACT_FORM.form.submit.text
+                      }
                       spinDuration={CONTACT_FORM.form.submit.spinDuration}
                       onHover={CONTACT_FORM.form.submit.hoverEffect}
-                      className="text-accent-green-light"
+                      className={`${isSubmitting ? "text-gray-4" : "text-accent-green-light"}`}
                       onClick={() => {
-                        const form = document.querySelector("form");
-                        if (form) {
-                          form.requestSubmit();
+                        if (!isSubmitting) {
+                          const form = document.querySelector("form");
+                          if (form) {
+                            form.requestSubmit();
+                          }
                         }
                       }}
                     />
