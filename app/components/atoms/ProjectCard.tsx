@@ -20,8 +20,15 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const video = videoRef.current;
     if (!video || !project.video) return;
 
@@ -59,7 +66,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("loadstart", handleLoadStart);
     };
-  }, [project.video, isVideoReady]);
+  }, [project.video, isVideoReady, isMounted]);
 
   return (
     <div className="flex flex-col gap-4 w-full h-full">
@@ -86,7 +93,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <source src={project.video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            {!isVideoReady && (
+            {isMounted && !isVideoReady && (
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 aspect-[4/3] bg-gray-800 rounded-lg shadow-2xl flex items-center justify-center">
                 <div className="w-8 h-8 border-2 border-accent-green border-t-transparent rounded-full animate-spin"></div>
               </div>

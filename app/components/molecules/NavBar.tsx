@@ -30,10 +30,10 @@ export default function NavBar() {
                 >
                   <Image
                     className="h-16 w-auto cursor-pointer"
-                    src="/assets/images/personal/mwlogo.png"
+                    src="/assets/images/personal/mwlogo.svg"
                     alt="Marcus Wein Logo"
-                    width={64}
-                    height={64}
+                    width={48}
+                    height={48}
                     priority
                     draggable={false}
                   />

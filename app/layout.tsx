@@ -73,7 +73,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
-          href="/assets/images/personal/mwlogo.png"
+          href="/assets/images/personal/mwlogo.svg"
         />
         <meta name="theme-color" content="#262626" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -99,9 +99,9 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="/assets/images/personal/mwlogo.png"
+          href="/assets/images/personal/mwlogo.svg"
           as="image"
-          type="image/png"
+          type="image/svg+xml"
         />
 
         {/* Preload critical videos */}

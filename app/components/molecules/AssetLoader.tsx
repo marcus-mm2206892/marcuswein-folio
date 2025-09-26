@@ -18,7 +18,7 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
       "/assets/images/personal/marcuswein2.svg",
       "/assets/images/personal/marcusw2.svg",
       "/assets/images/svg/vectorhomescreen.svg",
-      "/assets/images/personal/mwlogo.png",
+      "/assets/images/personal/mwlogo.svg",
       "/assets/videos/caquvideo.mp4",
       "/assets/videos/campconnectvideo.mp4",
       "/assets/videos/unitrackvideo.mp4",
