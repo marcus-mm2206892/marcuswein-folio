@@ -11,7 +11,7 @@ interface AssetLoaderProps {
 export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 5; // Critical assets count
+  const totalAssets = 9; // Critical assets count
 
   useEffect(() => {
     const criticalAssets = [
@@ -20,6 +20,10 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
       "/assets/images/svg/vectorhomescreen.svg",
       "/assets/images/personal/mwlogo.png",
       "/assets/videos/caquvideo.mp4",
+      "/assets/videos/campconnectvideo.mp4",
+      "/assets/videos/unitrackvideo.mp4",
+      "/assets/videos/makiravideo.mp4",
+      "/assets/videos/siemensvideo.mp4",
     ];
 
     let loadedCount = 0;
@@ -37,8 +41,10 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
     criticalAssets.forEach((asset) => {
       if (asset.endsWith(".mp4")) {
         const video = document.createElement("video");
-        video.preload = "metadata";
-        video.onloadedmetadata = checkAssetLoaded;
+        video.preload = "auto";
+        video.muted = true;
+        video.oncanplaythrough = checkAssetLoaded;
+        video.onerror = checkAssetLoaded; // Count as loaded even if error
         video.src = asset;
       } else {
         const img = new Image();

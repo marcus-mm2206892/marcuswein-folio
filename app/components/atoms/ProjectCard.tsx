@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 interface Project {
@@ -19,15 +19,28 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !project.video) return;
 
+    // Handle video loading state
+    const handleCanPlay = () => {
+      setIsVideoReady(true);
+    };
+
+    const handleLoadStart = () => {
+      setIsVideoReady(false);
+    };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("loadstart", handleLoadStart);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && isVideoReady) {
             video.play().catch(console.error);
           } else {
             video.pause();
@@ -43,8 +56,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
     return () => {
       observer.disconnect();
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("loadstart", handleLoadStart);
     };
-  }, [project.video]);
+  }, [project.video, isVideoReady]);
 
   return (
     <div className="flex flex-col gap-4 w-full h-full">
@@ -59,17 +74,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {project.video && (
-          <video
-            ref={videoRef}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 aspect-[4/3] object-cover rounded-lg shadow-2xl"
-            muted
-            loop
-            playsInline
-            preload="metadata"
-          >
-            <source src={project.video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <>
+            <video
+              ref={videoRef}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 aspect-[4/3] object-cover rounded-lg shadow-2xl"
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src={project.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {!isVideoReady && (
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 aspect-[4/3] bg-gray-800 rounded-lg shadow-2xl flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-accent-green border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            )}
+          </>
         )}
       </div>
       <div className="flex flex-col gap-2">
