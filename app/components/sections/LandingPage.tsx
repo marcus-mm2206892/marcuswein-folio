@@ -2,6 +2,7 @@
 
 import { LANDING_PAGE } from "@/app/config/data";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Canvas from "../molecules/Canvas";
 import { DownRightIcon, UpRightArrowIcon } from "../atoms/Icons";
 import AnimatedPill from "../atoms/AnimatedPill";
@@ -58,14 +59,20 @@ export default function LandingPage() {
       }}
     >
       <div className="flex-1 flex flex-col items-center justify-end md:justify-center w-full mb-12 md:mb-0">
-        <img
+        <Image
           src="/assets/images/personal/marcuswein2.svg"
           alt="MARCUSW"
+          width={800}
+          height={200}
+          priority
           className="mt-auto mb-8 w-full h-auto hidden md:block"
         />
-        <img
+        <Image
           src="/assets/images/personal/marcusw2.svg"
           alt="MARCUSW"
+          width={400}
+          height={100}
+          priority
           className="block md:hidden md:mt-20 h-auto pb-8 self-start"
           style={{
             width: "clamp(75%, 80vw, 100%)",
@@ -101,9 +108,12 @@ export default function LandingPage() {
 
           {/* Row 2, Column 3: Vector Home Screen Image */}
           <div className="flex items-center justify-end">
-            <img
+            <Image
               src="/assets/images/svg/vectorhomescreen.svg"
               alt="Vector Home Screen"
+              width={256}
+              height={256}
+              priority
               className="w-3/5 max-w-64 h-auto hidden md:block"
             />
           </div>

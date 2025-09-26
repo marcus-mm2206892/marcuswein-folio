@@ -69,17 +69,21 @@ export default function Footer() {
                     className="text-gray-1 text-sm transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
-                      const element = document.querySelector(item.href);
-                      if (element) {
-                        const elementPosition =
-                          element.getBoundingClientRect().top;
-                        const offsetPosition =
-                          elementPosition + window.pageYOffset - 100;
+                      if (item.id === "home") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        const element = document.querySelector(item.href);
+                        if (element) {
+                          const elementPosition =
+                            element.getBoundingClientRect().top;
+                          const offsetPosition =
+                            elementPosition + window.pageYOffset - 100;
 
-                        window.scrollTo({
-                          top: offsetPosition,
-                          behavior: "smooth",
-                        });
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth",
+                          });
+                        }
                       }
                     }}
                   >

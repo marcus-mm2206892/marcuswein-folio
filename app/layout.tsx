@@ -77,6 +77,96 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#262626" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Preload critical assets */}
+        <link
+          rel="preload"
+          href="/assets/images/personal/marcuswein2.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/personal/marcusw2.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/svg/vectorhomescreen.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/personal/mwlogo.png"
+          as="image"
+          type="image/png"
+        />
+
+        {/* Preload critical videos */}
+        <link
+          rel="preload"
+          href="/assets/videos/caquvideo.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="/assets/videos/campconnectvideo.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="/assets/videos/unitrackvideo.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="/assets/videos/makiravideo.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="/assets/videos/siemensvideo.mp4"
+          as="video"
+          type="video/mp4"
+        />
+
+        {/* Preload critical background images */}
+        <link
+          rel="preload"
+          href="/assets/images/backgrounds/bg1.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/backgrounds/bg2.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/backgrounds/bg3.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/backgrounds/bg4.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        <link
+          rel="preload"
+          href="/assets/images/backgrounds/bg5.jpg"
+          as="image"
+          type="image/jpeg"
+        />
       </head>
       <body
         className={`font-body ${spaceGrotesk.className}`}

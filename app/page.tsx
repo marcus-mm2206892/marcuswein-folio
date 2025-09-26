@@ -13,6 +13,7 @@ import Lenis from "lenis";
 import { motion, AnimatePresence } from "framer-motion";
 import Testimonials from "./components/sections/Testimonials";
 import Contact from "./components/sections/Contact";
+import AssetLoader from "./components/molecules/AssetLoader";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -46,26 +47,28 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-off-white text-gray-3">
-      <NavBar />
-      {/* Hero Section */}
-      <section id="home">
-        <LandingPage />
-      </section>
-      <MainPage />
-      {/* <Testimonials /> */}
-      <Contact />
-      <Footer />
+    <AssetLoader>
+      <main className="min-h-screen bg-off-white text-gray-3">
+        <NavBar />
+        {/* Hero Section */}
+        <section id="home">
+          <LandingPage />
+        </section>
+        <MainPage />
+        {/* <Testimonials /> */}
+        <Contact />
+        <Footer />
 
-      {/* Burger Menu - Show after 50vh or when sidebar is open */}
-      <Burger
-        isOpen={isSidebarOpen}
-        onToggle={toggleSidebar}
-        isVisible={showBurger || isSidebarOpen}
-      />
+        {/* Burger Menu - Show after 50vh or when sidebar is open */}
+        <Burger
+          isOpen={isSidebarOpen}
+          onToggle={toggleSidebar}
+          isVisible={showBurger || isSidebarOpen}
+        />
 
-      {/* Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-    </main>
+        {/* Sidebar */}
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      </main>
+    </AssetLoader>
   );
 }

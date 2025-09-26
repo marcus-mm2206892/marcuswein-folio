@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { LANDING_PAGE, NAVIGATION } from "@/app/config/data";
 import Magnetic from "../animations/Magnetic";
 import AnimatedLink from "../atoms/AnimatedLink";
@@ -25,14 +25,17 @@ export default function NavBar() {
                   aria-label="Go to homepage"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    window.location.reload();
                   }}
                 >
-                  <img
-                    className="h-12 w-auto cursor-pointer"
+                  <Image
+                    className="h-16 w-auto cursor-pointer"
                     src="/assets/images/personal/mwlogo.png"
                     alt="Marcus Wein Logo"
-                    draggable="false"
+                    width={64}
+                    height={64}
+                    priority
+                    draggable={false}
                   />
                 </a>
               </div>

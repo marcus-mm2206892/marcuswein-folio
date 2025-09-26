@@ -35,7 +35,7 @@ export default function Magnetic({ children }: MagneticProps) {
       onMouseLeave={mouseLeave}
       ref={ref}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 150, damping: 10, mass: 0.1 }}
     >
       {children}
     </motion.div>
