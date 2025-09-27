@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marcus Wein's 2025 Folio
 
-## Getting Started
+This is my portfolio built with Next.js because apparently, I updated it because vanilla HTML isn't cool anymore 🤷‍♂️
 
-First, run the development server:
+## What's Inside This Folio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js 14** - Because we're not living in 2019 anymore
+- **TypeScript** - For when you want to argue with your computer about types
+- **Tailwind CSS** - Because writing custom CSS is for masochists
+- **Three.js** - For 3D elements that make your GPU cry
+- **Framer Motion** - Animations smoother than my pickup lines
+- **EmailJS** - For emails that actually send
+- **Vercel** - Hosting that doesn't break the bank
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo 🚀
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Check out the live portfolio at [marcus-wein.vercel](https://marcus-wein.vercel.app/)!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features That Actually Work (Probably) ✨
 
-## Learn More
+- **Responsive Design** - Works on your phone, tablet, and that weird ultrawide monitor your friend has (probably)
+- **Smooth Animations** - Thanks CodePen :D
+- **3D Elements** - Did 2 weeks of tinkering in Blender
+- **Contact Form** - Actually sends emails (I tested it once, it worked)
 
-To learn more about Next.js, take a look at the following resources:
+## Known Issues (The "It's Not a Bug, It's a Feature" Section) 🐛
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Sometimes the animations are too smooth and might hypnotize you
+- The 3D elements might make your browser cry on older devices
+- The contact form works 99.9% of the time (that 0.1% is just for suspense)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+Feel free to reach out! I promise I'm more professional in emails than I am in README files. 😅
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_P.S. If you found this README entertaining, consider starring the repo! (I need to stay employed pls) 🎉_
