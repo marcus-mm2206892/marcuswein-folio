@@ -141,31 +141,31 @@ export default function RootLayout({
           rel="preload"
           href="/assets/images/backgrounds/bg1.jpg"
           as="image"
-          type="image/jpeg"
+          type="image/jpg"
         />
         <link
           rel="preload"
           href="/assets/images/backgrounds/bg2.jpg"
           as="image"
-          type="image/jpeg"
+          type="image/jpg"
         />
         <link
           rel="preload"
           href="/assets/images/backgrounds/bg3.jpg"
           as="image"
-          type="image/jpeg"
+          type="image/jpg"
         />
         <link
           rel="preload"
           href="/assets/images/backgrounds/bg4.jpg"
           as="image"
-          type="image/jpeg"
+          type="image/jpg"
         />
         <link
           rel="preload"
           href="/assets/images/backgrounds/bg5.jpg"
           as="image"
-          type="image/jpeg"
+          type="image/jpg"
         />
       </head>
       <body

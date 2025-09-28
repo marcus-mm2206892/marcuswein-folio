@@ -76,7 +76,13 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          Loading assets... {Math.round((loadedAssets / totalAssets) * 100)}%
+          {loadedAssets < 3 && "Loading stuff..."}
+          {loadedAssets >= 3 && loadedAssets < 6 && "Still loading stuff..."}
+          {loadedAssets >= 6 &&
+            loadedAssets < 9 &&
+            "Almost done loading stuff..."}
+          {loadedAssets >= 9 && "Done loading stuff"}
+          {Math.round((loadedAssets / totalAssets) * 100)}%
         </motion.p>
       </div>
     </div>
