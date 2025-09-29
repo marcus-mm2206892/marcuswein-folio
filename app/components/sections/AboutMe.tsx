@@ -2,6 +2,9 @@ import React from "react";
 import { DownRightIcon } from "../atoms/Icons";
 import { ABOUT_ME } from "@/app/config/data";
 
+// if you read my code please dont judge me im just a noob trying to learn
+// also i just had a midterm today and i want my github contributions green streak alive :D
+
 export default function AboutMe() {
   return (
     <section
