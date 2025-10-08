@@ -12,18 +12,18 @@ This is my portfolio built with Next.js because apparently, I updated it because
 - **EmailJS** - For emails that actually send
 - **Vercel** - Hosting that doesn't break the bank
 
-## Live Demo 🚀
+## Live Demo
 
 Check out the live portfolio at [marcus-wein.vercel](https://marcus-wein.vercel.app/)!
 
-## Features That Actually Work (Probably) ✨
+## Features That Actually Work (Probably)
 
 - **Responsive Design** - Works on your phone, tablet, and that weird ultrawide monitor your friend has (probably)
 - **Smooth Animations** - Thanks CodePen :D
 - **3D Elements** - Did 2 weeks of tinkering in Blender
 - **Contact Form** - Actually sends emails (I tested it once, it worked)
 
-## Known Issues (The "It's Not a Bug, It's a Feature" Section) 🐛
+## Known Issues (The "It's Not a Bug, It's a Feature" Section)
 
 - Sometimes the animations are too smooth and might hypnotize you
 - The 3D elements might make your browser cry on older devices
@@ -33,4 +33,4 @@ Check out the live portfolio at [marcus-wein.vercel](https://marcus-wein.vercel.
 
 Feel free to reach out! I promise I'm more professional in emails than I am in README files. 😅
 
-_P.S. If you found this README entertaining, consider starring the repo! (I need to stay employed pls) 🎉_
+_P.S. If you found this README entertaining, consider starring the repo! (I need to stay employed pls)_
