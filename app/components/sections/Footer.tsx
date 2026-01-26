@@ -12,7 +12,7 @@ import {
 import AnimatedLink from "@/app/components/atoms/AnimatedLink";
 
 export default function Footer() {
-  const [localTime, setLocalTime] = useState("");
+  const [localTime, setLocalTime] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Footer() {
       const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
 
       setLocalTime(
-        `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}, DOH`
+        `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}, DOH`,
       );
     };
 
@@ -158,7 +158,9 @@ export default function Footer() {
             {"Local Time".toUpperCase()}
           </span>
           <br />
-          <span className="font-mono text-gray-1">{localTime}</span>
+          <span className="font-mono text-gray-1">
+            {localTime ?? "-- : -- : -- --, DOH"}
+          </span>
         </div>
         <div className="hidden md:block"></div>
       </div>

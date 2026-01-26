@@ -28,6 +28,9 @@ import {
   HuggingfaceColoredIcon,
   GitColoredIcon,
   PostmanColoredIcon,
+  LinuxColoredIcon,
+  UnityBlackIcon,
+  OpenXRColoredIcon,
 } from "../components/atoms/Icons";
 
 export const SITE_CONFIG = {
@@ -150,7 +153,7 @@ export const LANDING_PAGE = {
     y: "51.5295° E",
   },
   landingLocation: "Doha, Qatar",
-  subInfoTitle: "GRADUATING",
+  subInfoTitle: "GRAD-WAITING",
   subInfoDescription: `MAY '26`,
   popupTexts: {
     frontendDev: {
@@ -186,7 +189,7 @@ export const ABOUT_ME = {
   paragraphs: [
     `Growing up as an outsider in Qatar's desert lands, I discovered resilience and creativity in navigating worlds not originally my own. 
 That spirit fuels my work today, <strong>building meaningful software solutions that merge design, AI, and research.</strong>
-Whether it's designing apps, experimenting with deep learning, or competing in hackathons, I thrive on making technology practical, human, and a little bit unexpected.`,
+I thrive on making technology practical, human, and a little bit unexpected.`,
 
     `Outside of tech, you'll find me piecing together Gundams, sipping coffee in random places, editing media, or pushing my small Nissan Tiida like it's a race car. 
 To me, building, whether digital or physical, isn't just what I do, it's who I am.`,
@@ -225,10 +228,10 @@ export const EXPERIENCES = [
     title: "Qatar University",
     role: "Summer Research Intern",
     description: [
-      "Designed and trained a CNN helmet pose detection model (EfficientNet-B3) with ~95% accuracy",
-      "Collected and labeled custom image datasets to classify distracted vs. attentive motorcycle riders",
-      "Prototyped a mobile app with OpenCV and Flutter for real-time detection, GPS speed tracking, and alerts",
-      "Prepared groundwork for TensorFlow Lite integration on mobile devices",
+      "Evaluated and benchmarked 12+ CNN architectures for helmet pose classification",
+      "Trained an EfficientNet-B3 model in PyTorch on 1,799 labeled images to detect rider attentiveness with ~95% accuracy",
+      "Conducted on-device inference and performance testing on smartphones to assess real-time feasibility",
+      "Prototyped a Flutter and OpenCV mobile app with live camera streaming, GPS speed tracking, alert notifications, and groundwork for TensorFlow Lite integration",
     ],
     skills: [
       "Deep Learning",
@@ -294,21 +297,47 @@ export const EXPERIENCES = [
     color: "#333328", // darker
   },
   {
+    title: "Qatar Science & Technology Park",
+    role: "Frontend Development & UI/UX Intern",
+    description: [
+      "Contributed to the Fraud Insights Hub project at CyFirm, a regulatory and analytics platform for Qatari financial institutions, using Next.js and Tailwind CSS",
+      "Designed and refined UI/UX flows in Figma for case reporting, dashboards, and investigative workflows",
+      "Built and enhanced data visualizations to make transaction activity, user behavior, and fraud indicators easier to tracks",
+      "Collaborated closely with backend engineers on API integration, frontend data handling, and state management",
+    ],
+    skills: [
+      "Frontend Development",
+      "Next.js",
+      "Tailwind CSS",
+      "UI/UX Design",
+      "Figma",
+      "API Integration",
+    ],
+    src: "/assets/images/experiences/qstp.jpg",
+    logo: "/assets/images/companies/qstp.png",
+    date: "Oct 2025 – Dec 2025",
+    location: "Doha, Qatar",
+    link: "https://www.qstp.org.qa",
+    color: "#2C2C24",
+  },
+  {
     title: "S3Lab",
     role: "Frontend Development Intern",
     description: [
-      "Building the frontend of a carbon emissions tracking platform for companies",
-      "Resolving development tickets through Redmine and collaborating with senior devs and QA through Git",
-      "Connecting backend APIs to display and process sustainability data through the user interface",
-      "Collaborating with research teams to integrate AI-powered chat and data visualization features",
+      "Built and maintained the frontend of a carbon emissions calculation and tracking platform using Next.js and React",
+      "Designed and implemented 60+ reusable UI components and screens, delivering features such as an AI chat assistant, interactive report generation with PDF export, automated CSV and Excel processing, and analytics dashboards",
+      "Collaborated with backend teams to integrate REST APIs and ensure reliable data flow across the application",
+      "Established development tooling with Playwright end-to-end testing, Zod-based form validation, Husky Git hooks, GitHub Actions CI/CD pipelines, and Docker containerization",
     ],
     skills: [
       "Frontend Development",
       "Next.js",
       "API Integration",
       "Data Visualization",
-      "AI Chatbots",
-      "RAGs",
+      "Software Architecture",
+      "Scripting",
+      "Testing",
+      "CI/CD",
     ],
     src: "/assets/images/experiences/s3lab2.png",
     logo: "/assets/images/companies/s3lab.png",
@@ -337,6 +366,10 @@ export const COMPANIES = [
     logo: "/assets/images/companies/makira.png",
   },
   {
+    name: "Qatar Science & Technology Park",
+    logo: "/assets/images/companies/qstp.png",
+  },
+  {
     name: "S3Lab",
     logo: "/assets/images/companies/s3lab.png",
   },
@@ -354,7 +387,7 @@ export const PROJECTS = {
         "Web platform that helps companies calculate, track, and visualize their carbon emissions",
       year: "2025",
       tag1: "Frontend",
-      tag2: "LLMs",
+      tag2: "AI",
       backgroundImage: "/assets/images/backgrounds/bg1.jpg",
       video: "/assets/videos/caquvideo.mp4",
       visitLink: "https://s3lab.net",
@@ -372,16 +405,17 @@ export const PROJECTS = {
       visitLink: "https://youtu.be/NW1u85gMUBk",
     },
     {
-      title: "UniTrack",
+      title: "Sentry",
       organization: "Qatar University",
       description:
-        "Student management system for monitoring study plans, course registration, grading, and academic progress",
+        "A multimodal VR-controlled teleoperation robot with victim tracking and haptic feedback for high-risk environments",
       year: "2025",
-      tag1: "Fullstack Dev.",
-      tag2: "Design",
+      tag1: "VR & Robotics",
+      tag2: "AI",
       backgroundImage: "/assets/images/backgrounds/bg3.jpg",
-      video: "/assets/videos/unitrackvideo.mp4",
-      visitLink: "https://unitrack-eight.vercel.app",
+      video: "/assets/videos/sentryvideo.mp4",
+      visitLink:
+        "https://qucloud-my.sharepoint.com/:v:/g/personal/mm2206892_qu_edu_qa/IQDb5iy59gX9Q4Algs5k0GiFAWGF0Gz87UhT94at1G5afK4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tFtV1Y",
     },
     {
       title: "Makira Mobile App UI",
@@ -459,6 +493,9 @@ export const SKILLS_CARDS = [
       { label: "MATLAB", icon: MatlabColoredIcon },
       { label: "SPSS", icon: SpssBlackIcon },
       { label: "PowerBI", icon: PowerbiColoredIcon },
+      { label: "Linux", icon: LinuxColoredIcon },
+      { label: "Unity", icon: UnityBlackIcon },
+      { label: "OpenXR", icon: OpenXRColoredIcon },
     ],
   },
 ];

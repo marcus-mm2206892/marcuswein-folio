@@ -3,7 +3,11 @@
 import React from "react";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { EXPERIENCES, EXPERIENCES_DESCRIPTION } from "@/app/config/data";
+import {
+  EXPERIENCES,
+  EXPERIENCES_DESCRIPTION,
+  COMPANIES,
+} from "@/app/config/data";
 import ExperienceCard from "../atoms/ExperienceCard";
 import SectionHeader from "../molecules/SectionHeader";
 import {
@@ -34,7 +38,7 @@ export default function Experience() {
         }}
         subtitle="ADVENTURES"
         description={EXPERIENCES_DESCRIPTION}
-        superscriptNumber="5"
+        superscriptNumber={EXPERIENCES.length.toString()}
         icons={[
           <BobaFettIcon size={20} />,
           <HeartIcon size={20} />,
@@ -46,9 +50,9 @@ export default function Experience() {
       <div className="w-full pt-12 flex justify-center">
         <div className="w-[90%] max-w-[1100px]">
           <LogoLoop
-            logos={EXPERIENCES.map((experience) => ({
-              src: experience.logo,
-              alt: experience.title,
+            logos={COMPANIES.map((company) => ({
+              src: company.logo,
+              alt: company.name,
             }))}
             speed={40}
             direction="left"
@@ -69,7 +73,7 @@ export default function Experience() {
             key={index}
             i={index}
             {...experience}
-            range={[index * 0.25, 1]}
+            range={[index * 0.2, 1]}
             targetScale={targetScale}
             progress={scrollYProgress}
           />

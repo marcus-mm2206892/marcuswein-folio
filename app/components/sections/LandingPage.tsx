@@ -41,8 +41,9 @@ export default function LandingPage() {
       }
     };
 
-    // Call handleScroll immediately to set initial state based on current scroll position
-    handleScroll();
+    requestAnimationFrame(() => {
+      handleScroll();
+    });
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

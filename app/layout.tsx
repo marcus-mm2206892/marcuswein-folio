@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { fonts } from "./config/theme";
 import { SITE_CONFIG } from "./config/data";
@@ -173,6 +174,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <GrainOverlay />
+        <Analytics />
         <div>{children}</div>
       </body>
     </html>
