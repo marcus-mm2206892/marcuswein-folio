@@ -687,7 +687,7 @@ export const OpenXRColoredIcon: React.FC<IconProps> = ({
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/skills_icons/openxr-colored.svg"
+    src="/assets/images/icons/skills_icons/openxr-colored.png"
     alt="OpenXR"
     width={size}
     height={size}
@@ -695,12 +695,12 @@ export const OpenXRColoredIcon: React.FC<IconProps> = ({
   />
 );
 
-export const UnityColoredIcon: React.FC<IconProps> = ({
+export const UnityBlackIcon: React.FC<IconProps> = ({
   className = "",
   size = 18,
 }) => (
   <Image
-    src="/assets/images/icons/skills_icons/unity-colored.svg"
+    src="/assets/images/icons/skills_icons/unity-black.svg"
     alt="Unity"
     width={size}
     height={size}

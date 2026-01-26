@@ -29,7 +29,7 @@ import {
   GitColoredIcon,
   PostmanColoredIcon,
   LinuxColoredIcon,
-  UnityColoredIcon,
+  UnityBlackIcon,
   OpenXRColoredIcon,
 } from "../components/atoms/Icons";
 
@@ -467,7 +467,7 @@ export const SKILLS_CARDS = [
       { label: "SPSS", icon: SpssBlackIcon },
       { label: "PowerBI", icon: PowerbiColoredIcon },
       { label: "Linux", icon: LinuxColoredIcon },
-      { label: "Unity", icon: UnityColoredIcon },
+      { label: "Unity", icon: UnityBlackIcon },
       { label: "OpenXR", icon: OpenXRColoredIcon },
     ],
   },

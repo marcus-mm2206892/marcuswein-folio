@@ -25,6 +25,11 @@ export default function Home() {
       setShowBurger(scrollY >= window.innerHeight / 10); // Show after 1/10 of viewport height
     };
 
+    // Defer initial scroll check to after hydration
+    requestAnimationFrame(() => {
+      handleScroll();
+    });
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
