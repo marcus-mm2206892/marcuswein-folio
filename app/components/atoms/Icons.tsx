@@ -669,6 +669,45 @@ export const PowerbiColoredIcon: React.FC<IconProps> = ({
   />
 );
 
+export const LinuxColoredIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/skills_icons/linux-colored.svg"
+    alt="Linux"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const OpenXRColoredIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/skills_icons/openxr-colored.svg"
+    alt="OpenXR"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
+export const UnityColoredIcon: React.FC<IconProps> = ({
+  className = "",
+  size = 18,
+}) => (
+  <Image
+    src="/assets/images/icons/skills_icons/unity-colored.svg"
+    alt="Unity"
+    width={size}
+    height={size}
+    className={className}
+  />
+);
+
 export const PrismaBlackIcon: React.FC<IconProps> = ({
   className = "",
   size = 18,
