@@ -1,26 +1,26 @@
 # Marcus Wein's 2025 Folio
 
-This is my portfolio built with Next.js because apparently, I updated it because vanilla HTML isn't cool anymore 🤷‍♂️
+This is my portfolio built with Next.js because apparently, vanilla HTML isn't cool anymore 🤷‍♂️
 
 ## What's Inside This Folio
 
-- **Next.js 14** - Because we're not living in 2019 anymore
-- **TypeScript** - For when you want to argue with your computer about types
+- **Next.js 14** - Because I love React
+- **TypeScript** - The standart in big 2026
 - **Tailwind CSS** - Because writing custom CSS is for masochists
-- **Three.js** - For 3D elements that make your GPU cry
+- **Three.js** - For my custom 3D element that will make your GPU cry
 - **Framer Motion** - Animations smoother than my pickup lines
-- **EmailJS** - For emails that actually send
-- **Vercel** - Hosting that doesn't break the bank
+- **EmailJS** - For emails that actually send (hopefully)
+- **Vercel** - Hosting that doesn't hurt my wallet
 
 ## Live Demo
 
-Check out the live portfolio at [marcus-wein.vercel](https://marcus-wein.vercel.app/)!
+Check out the live portfolio at [marcuswein.dev](https://marcuswein.dev/)!
 
 ## Features That Actually Work (Probably)
 
 - **Responsive Design** - Works on your phone, tablet, and that weird ultrawide monitor your friend has (probably)
-- **Smooth Animations** - Thanks CodePen :D
-- **3D Elements** - Did 2 weeks of tinkering in Blender
+- **Smooth Animations** - Thanks CodePen & YouTube tuts :D
+- **3D Element** - Did a week of tinkering in Blender
 - **Contact Form** - Actually sends emails (I tested it once, it worked)
 
 ## Known Issues (The "It's Not a Bug, It's a Feature" Section)
