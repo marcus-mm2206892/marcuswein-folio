@@ -393,18 +393,6 @@ export const PROJECTS = {
       visitLink: "https://s3lab.net",
     },
     {
-      title: "CampConnect",
-      organization: "CMUQ Lifelines",
-      description:
-        "Mobile app connecting displaced students with nearby educational camps in post-crisis areas",
-      year: "2025",
-      tag1: "Mobile Dev.",
-      tag2: "Hackathon",
-      backgroundImage: "/assets/images/backgrounds/bg2.jpg",
-      video: "/assets/videos/campconnectvideo.mp4",
-      visitLink: "https://youtu.be/NW1u85gMUBk",
-    },
-    {
       title: "Sentry",
       organization: "Qatar University",
       description:
@@ -416,6 +404,18 @@ export const PROJECTS = {
       video: "/assets/videos/sentryvideo.mp4",
       visitLink:
         "https://qucloud-my.sharepoint.com/:v:/g/personal/mm2206892_qu_edu_qa/IQDb5iy59gX9Q4Algs5k0GiFAWGF0Gz87UhT94at1G5afK4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tFtV1Y",
+    },
+    {
+      title: "CampConnect",
+      organization: "CMUQ Lifelines",
+      description:
+        "Mobile app connecting displaced students with nearby educational camps in post-crisis areas",
+      year: "2025",
+      tag1: "Mobile Dev.",
+      tag2: "Hackathon",
+      backgroundImage: "/assets/images/backgrounds/bg2.jpg",
+      video: "/assets/videos/campconnectvideo.mp4",
+      visitLink: "https://youtu.be/NW1u85gMUBk",
     },
     {
       title: "Makira Mobile App UI",

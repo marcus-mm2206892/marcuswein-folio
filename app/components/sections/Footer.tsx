@@ -151,7 +151,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5 pt-5 items-end">
         <h1 className="md:col-span-2 m-0 p-0 text-3xl md:text-6xl font-extrabold text-gray-3 leading-none">
-          © 2024 <br /> MARCUSW
+          © 2026 <br /> MARCUSW
         </h1>
         <div className="text-right md:text-left text-sm md:text-base">
           <span className="font-heading font-bold text-gray-3">
