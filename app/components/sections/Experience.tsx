@@ -3,7 +3,11 @@
 import React from "react";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
-import { EXPERIENCES, EXPERIENCES_DESCRIPTION, COMPANIES } from "@/app/config/data";
+import {
+  EXPERIENCES,
+  EXPERIENCES_DESCRIPTION,
+  COMPANIES,
+} from "@/app/config/data";
 import ExperienceCard from "../atoms/ExperienceCard";
 import SectionHeader from "../molecules/SectionHeader";
 import {
@@ -34,7 +38,7 @@ export default function Experience() {
         }}
         subtitle="ADVENTURES"
         description={EXPERIENCES_DESCRIPTION}
-        superscriptNumber="5"
+        superscriptNumber={EXPERIENCES.length.toString()}
         icons={[
           <BobaFettIcon size={20} />,
           <HeartIcon size={20} />,
@@ -69,7 +73,7 @@ export default function Experience() {
             key={index}
             i={index}
             {...experience}
-            range={[index * 0.25, 1]}
+            range={[index * 0.2, 1]}
             targetScale={targetScale}
             progress={scrollYProgress}
           />
