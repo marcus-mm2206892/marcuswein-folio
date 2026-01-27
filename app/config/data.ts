@@ -495,7 +495,6 @@ export const SKILLS_CARDS = [
       { label: "PowerBI", icon: PowerbiColoredIcon },
       { label: "Linux", icon: LinuxColoredIcon },
       { label: "Unity", icon: UnityBlackIcon },
-      { label: "OpenXR", icon: OpenXRColoredIcon },
     ],
   },
 ];
