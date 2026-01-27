@@ -300,10 +300,10 @@ export const EXPERIENCES = [
     title: "Qatar Science & Technology Park",
     role: "Frontend Development & UI/UX Intern",
     description: [
-      "Contributed to the Fraud Insights Hub project at CyFirm, a regulatory and analytics platform for Qatari financial institutions, using Next.js and Tailwind CSS",
+      "Contributed to the Fraud Insights Hub project at CyFirm, a regulatory platform for Qatari financial institutions, using Next.js and Tailwind CSS",
       "Designed and refined UI/UX flows in Figma for case reporting, dashboards, and investigative workflows",
-      "Built and enhanced data visualizations to make transaction activity, user behavior, and fraud indicators easier to tracks",
-      "Collaborated closely with backend engineers on API integration, frontend data handling, and state management",
+      "Built and enhanced data visualizations to make transaction activity, user behavior, and fraud indicators easier to track",
+      "Collaborated closely with backend engineers on API integration and frontend data handling",
     ],
     skills: [
       "Frontend Development",
@@ -325,9 +325,9 @@ export const EXPERIENCES = [
     role: "Frontend Development Intern",
     description: [
       "Built and maintained the frontend of a carbon emissions calculation and tracking platform using Next.js and React",
-      "Designed and implemented 60+ reusable UI components and screens, delivering features such as an AI chat assistant, interactive report generation with PDF export, automated CSV and Excel processing, and analytics dashboards",
-      "Collaborated with backend teams to integrate REST APIs and ensure reliable data flow across the application",
-      "Established development tooling with Playwright end-to-end testing, Zod-based form validation, Husky Git hooks, GitHub Actions CI/CD pipelines, and Docker containerization",
+      "Designed and implemented 60+ UI components and screens, delivering features such as an AI chat assistant, interactive report generation, automated CSV processing, and analytics dashboards",
+      "Collaborated with backend teams to integrate REST APIs and ensure reliable data flow",
+      "Established development tooling with Playwright testing, Zod-based form validation, Husky Git hooks, CI pipelines, and Docker containerization",
     ],
     skills: [
       "Frontend Development",
