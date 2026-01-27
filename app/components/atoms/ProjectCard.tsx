@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {
         threshold: 0.1, // Trigger when 10% is visible
         rootMargin: "50px", // Start loading slightly before entering viewport
-      }
+      },
     );
 
     observer.observe(cardRef.current);
@@ -64,7 +64,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     // Check if video is already loaded (cached)
     const checkVideoReady = () => {
       // readyState: 0=HAVE_NOTHING, 1=HAVE_METADATA, 2=HAVE_CURRENT_DATA, 3=HAVE_FUTURE_DATA, 4=HAVE_ENOUGH_DATA
-      if (video.readyState >= 3) {
+      // Safari often stops at readyState 1 (HAVE_METADATA) until play is attempted
+      if (video.readyState >= 1) {
         setIsVideoReady(true);
       }
     };
@@ -73,6 +74,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     checkVideoReady();
 
     // Handle video loading state
+    const handleLoadedMetadata = () => {
+      setIsVideoReady(true);
+    };
+
     const handleCanPlay = () => {
       setIsVideoReady(true);
     };
@@ -85,20 +90,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       setIsVideoReady(false);
     };
 
-    const handleWaiting = () => {
-      setIsVideoReady(false);
+    // Safari: Add loadeddata event for better compatibility
+    const handleLoadedData = () => {
+      setIsVideoReady(true);
     };
 
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("loadeddata", handleLoadedData);
     video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("canplaythrough", handleCanPlayThrough);
     video.addEventListener("loadstart", handleLoadStart);
-    video.addEventListener("waiting", handleWaiting);
 
     return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("loadeddata", handleLoadedData);
       video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("canplaythrough", handleCanPlayThrough);
       video.removeEventListener("loadstart", handleLoadStart);
-      video.removeEventListener("waiting", handleWaiting);
     };
   }, [project.video, isMounted]);
 
@@ -113,12 +121,31 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     const videoObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Check readyState directly instead of relying on isVideoReady state
-          const canPlay = video.readyState >= 3;
-          if (entry.isIntersecting && canPlay) {
-            video.play().catch((err) => {
-              console.error("Error playing video:", err);
-            });
+          if (entry.isIntersecting) {
+            // Safari: Try to play immediately, let the browser handle readiness
+            // The readyState check was too strict for Safari
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch((err) => {
+                // If autoplay is blocked, try again after a short delay
+                if (
+                  err.name === "NotAllowedError" ||
+                  err.name === "NotSupportedError"
+                ) {
+                  console.log("Autoplay blocked, retrying...");
+                  setTimeout(() => {
+                    video.play().catch((retryErr) => {
+                      console.error(
+                        "Error playing video after retry:",
+                        retryErr,
+                      );
+                    });
+                  }, 100);
+                } else {
+                  console.error("Error playing video:", err);
+                }
+              });
+            }
           } else {
             video.pause();
           }
@@ -126,7 +153,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       },
       {
         threshold: 0.5, // Play when 50% of video is visible
-      }
+      },
     );
 
     videoObserver.observe(video);
@@ -169,10 +196,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               muted
               loop
               playsInline
-              preload="metadata"
+              autoPlay
+              preload="auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: isVideoReady ? 1 : 0 }}
               transition={{ duration: 0.4 }}
+              webkit-playsinline="true"
             >
               <source src={project.video} type="video/mp4" />
               Your browser does not support the video tag.

@@ -41,10 +41,36 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
     criticalAssets.forEach((asset) => {
       if (asset.endsWith(".mp4")) {
         const video = document.createElement("video");
-        video.preload = "auto";
+        video.preload = "metadata"; // Use metadata instead of auto for Safari compatibility
         video.muted = true;
-        video.oncanplaythrough = checkAssetLoaded;
-        video.onerror = checkAssetLoaded; // Count as loaded even if error
+        video.playsInline = true; // Required for Safari/iOS
+        video.setAttribute("playsinline", "true"); // Also set as attribute for Safari
+        
+        // Safari may not fire oncanplaythrough reliably, so use multiple events
+        let hasLoaded = false;
+        let videoTimeout: NodeJS.Timeout | null = null;
+        
+        const markAsLoaded = () => {
+          if (!hasLoaded) {
+            hasLoaded = true;
+            if (videoTimeout) {
+              clearTimeout(videoTimeout);
+            }
+            checkAssetLoaded();
+          }
+        };
+
+        // Try multiple events for better Safari compatibility
+        video.addEventListener("loadedmetadata", markAsLoaded, { once: true });
+        video.addEventListener("canplay", markAsLoaded, { once: true });
+        video.addEventListener("canplaythrough", markAsLoaded, { once: true });
+        video.addEventListener("error", markAsLoaded, { once: true });
+        
+        // Fallback timeout for Safari (in case events don't fire)
+        videoTimeout = setTimeout(() => {
+          markAsLoaded();
+        }, 2000); // 2 second timeout per video
+        
         video.src = asset;
       } else {
         const img = new Image();
@@ -76,12 +102,12 @@ export default function AssetLoader({ children, fallback }: AssetLoaderProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          {loadedAssets < 3 && "Loading stuff..."}
-          {loadedAssets >= 3 && loadedAssets < 6 && "Still loading stuff..."}
+          {loadedAssets < 3 && "Loading stuff... "}
+          {loadedAssets >= 3 && loadedAssets < 6 && "Still loading stuff... "}
           {loadedAssets >= 6 &&
             loadedAssets < 9 &&
-            "Almost done loading stuff..."}
-          {loadedAssets >= 9 && "Done loading stuff"}
+            "Almost done loading stuff... "}
+          {loadedAssets >= 9 && "Done loading stuff "}
           {Math.round((loadedAssets / totalAssets) * 100)}%
         </motion.p>
       </div>

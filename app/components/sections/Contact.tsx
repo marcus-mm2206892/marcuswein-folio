@@ -30,6 +30,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const successTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const messageErrorTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -46,6 +47,43 @@ export default function Contact() {
         ...prev,
         [name]: "",
       }));
+      // Clear timeout if user starts typing again
+      if (name === "message" && messageErrorTimeoutRef.current) {
+        clearTimeout(messageErrorTimeoutRef.current);
+        messageErrorTimeoutRef.current = null;
+      }
+    }
+  };
+
+  const handleMessageBlur = () => {
+    // Validate message length on blur
+    const trimmedMessage = formData.message.trim();
+    if (trimmedMessage.length > 0 && trimmedMessage.length < 10) {
+      // Clear the message field
+      setFormData((prev) => ({
+        ...prev,
+        message: "",
+      }));
+      
+      // Set error message
+      setErrors((prev) => ({
+        ...prev,
+        message: "Message must be at least 10 characters",
+      }));
+
+      // Clear any existing timeout
+      if (messageErrorTimeoutRef.current) {
+        clearTimeout(messageErrorTimeoutRef.current);
+      }
+
+      // Fade away error after 4 seconds
+      messageErrorTimeoutRef.current = setTimeout(() => {
+        setErrors((prev) => ({
+          ...prev,
+          message: "",
+        }));
+        messageErrorTimeoutRef.current = null;
+      }, 4000);
     }
   };
 
@@ -67,11 +105,6 @@ export default function Contact() {
           email: newErrors.email?.[0] ?? "",
           message: newErrors.message?.[0] ?? "",
         });
-
-        // Auto-clear errors after 3 seconds
-        setTimeout(() => {
-          setErrors({ name: "", email: "", message: "" });
-        }, 3000);
       }
       return false;
     }
@@ -79,6 +112,10 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Prevent spam submit
+    if (isSubmitting) return;
+
     setSubmitAttempted(true);
     setIsSubmitting(true);
 
@@ -109,6 +146,7 @@ export default function Contact() {
   useEffect(() => {
     return () => {
       if (successTimeoutRef.current) clearTimeout(successTimeoutRef.current);
+      if (messageErrorTimeoutRef.current) clearTimeout(messageErrorTimeoutRef.current);
     };
   }, []);
 
@@ -224,23 +262,40 @@ export default function Contact() {
                         : "border-gray-3 focus-within:border-accent-green-light"
                     }`}
                   >
-                    <div className="flex-2 w-full">
+                    <div className="flex-2 w-full relative">
                       <textarea
                         id="message"
                         name="message"
                         placeholder={
-                          errors.message ||
-                          CONTACT_FORM.form.message.placeholder
+                          errors.message && !formData.message
+                            ? ""
+                            : CONTACT_FORM.form.message.placeholder
                         }
                         value={formData.message}
                         onChange={handleInputChange}
+                        onBlur={handleMessageBlur}
                         rows={6}
                         className={`w-full px-3 py-2 resize-none focus:outline-none transition-all duration-500 ease-in-out ${
-                          errors.message
-                            ? "placeholder:text-red-400"
+                          errors.message && !formData.message
+                            ? "placeholder:text-transparent"
                             : "placeholder:text-gray-4"
                         }`}
                       />
+                      <AnimatePresence>
+                        {errors.message && !formData.message && (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="absolute inset-0 pointer-events-none flex items-start px-3 py-2 bg-black"
+                          >
+                            <span className="text-red-400 text-sm leading-relaxed">
+                              {errors.message}
+                            </span>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                     <div className="flex items-center justify-center pb-4 sm:pb-0 pr-0 sm:pr-4">
                       <CircularText
