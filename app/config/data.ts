@@ -446,7 +446,7 @@ export const PROJECTS = {
 };
 
 export const SKILLS_DESCRIPTION =
-  "Jack of many trades, master of Googling errors until code, design, and research projects finally behave.";
+  "Jack of many trades, master of Googling errors until my code finally behaves.";
 
 export const SKILLS_CARDS = [
   {
