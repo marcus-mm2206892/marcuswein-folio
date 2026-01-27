@@ -7,7 +7,6 @@ import { GithubIcon, LinkedInIcon, InstagramIcon } from "../atoms/Icons";
 import { CONTACT_FORM, SOCIAL_LINKS } from "../../config/data";
 import SectionTitle from "../atoms/SectionTitle";
 import Magnetic from "../animations/Magnetic";
-import { sendEmail } from "../../../lib/email";
 import { formSchema } from "../../../lib/schemas";
 import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,7 +29,9 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const successTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const messageErrorTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const messageErrorTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -64,7 +65,7 @@ export default function Contact() {
         ...prev,
         message: "",
       }));
-      
+
       // Set error message
       setErrors((prev) => ({
         ...prev,
@@ -112,7 +113,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Prevent spam submit
     if (isSubmitting) return;
 
@@ -121,7 +122,18 @@ export default function Contact() {
 
     if (validateForm()) {
       try {
-        await sendEmail(formData);
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Failed to send email");
+        }
 
         setFormData({ name: "", email: "", message: "" });
         setErrors({ name: "", email: "", message: "" });
@@ -135,6 +147,10 @@ export default function Contact() {
         }, 5000);
       } catch (error) {
         console.error("Form submission error:", error);
+        setErrors((prev) => ({
+          ...prev,
+          message: "Failed to send message. Please try again.",
+        }));
       } finally {
         setIsSubmitting(false);
       }
@@ -146,7 +162,8 @@ export default function Contact() {
   useEffect(() => {
     return () => {
       if (successTimeoutRef.current) clearTimeout(successTimeoutRef.current);
-      if (messageErrorTimeoutRef.current) clearTimeout(messageErrorTimeoutRef.current);
+      if (messageErrorTimeoutRef.current)
+        clearTimeout(messageErrorTimeoutRef.current);
     };
   }, []);
 
