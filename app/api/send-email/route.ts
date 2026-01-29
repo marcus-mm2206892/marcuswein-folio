@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       console.error("RESEND_API_KEY is not set");
       return NextResponse.json(
         { error: "Email service is not configured" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       console.error("RESEND_FROM_EMAIL is not set");
       return NextResponse.json(
         { error: "Email service is not configured" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -46,24 +46,21 @@ export async function POST(request: NextRequest) {
       console.error("Resend error:", error);
       return NextResponse.json(
         { error: error.message || "Failed to send email" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
     console.error("API route error:", error);
-    
+
     if (error instanceof Error) {
-      return NextResponse.json(
-        { error: error.message },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json(
       { error: "An unexpected error occurred" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
